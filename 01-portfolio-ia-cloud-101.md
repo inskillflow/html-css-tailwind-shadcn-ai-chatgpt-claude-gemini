@@ -579,6 +579,300 @@ Ensemble : **taille + graisse**.
 <p class="mt-3 text-slate-700">Je construis des projets IA (LLM, RAG) et des déploiements Cloud.</p>
 ```
 
+­
+
+­> Explications : 
+
+En Tailwind, `md:` c’est un **préfixe responsive**. Ça veut dire :
+
+> “À partir de l’écran **medium** (md), applique cette classe.”
+
+Concrètement :
+
+* Tailwind a des **breakpoints** par défaut :
+
+  * `sm` → ≥ 640px
+  * **`md` → ≥ 768px**
+  * `lg` → ≥ 1024px
+  * `xl` → ≥ 1280px
+  * `2xl` → ≥ 1536px
+
+Donc si tu écris :
+
+```html
+<p class="text-sm md:text-lg">
+  Texte
+</p>
+```
+
+Ça veut dire :
+
+* sur mobile (moins de 768px) → `text-sm`
+* sur écran moyen et plus (≥ 768px) → `text-lg`
+
+Autre exemple :
+
+```html
+<div class="p-4 md:p-8 lg:p-12">
+  ...
+</div>
+```
+
+→ petit écran : padding 16px
+→ écran moyen : 32px
+→ grand écran : 48px
+
+Donc `md:` = “à partir de 768px, je change le style”.
+
+
+<br/>
+
+
+### QUIZ 2 – Responsive design (HTML + Tailwind)
+
+### Q1. Qu’est-ce qu’on appelle “responsive design” ?
+
+* [ ] A. Un site qui s’affiche seulement sur desktop
+* [ ] B. Un site qui **s’adapte à la taille de l’écran** (mobile, tablette, desktop)
+* [ ] C. Un site qui utilise forcément Bootstrap
+* [ ] D. Un site sans CSS
+
+### Q2. Le responsive moderne est généralement conçu selon l’approche…
+
+* [ ] A. Desktop-first
+* [ ] B. Mobile-first (on commence petit puis on élargit)
+* [ ] C. Tablette-first
+* [ ] D. Imprimante-first
+
+### Q3. À quoi sert cette ligne ?
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+* [ ] A. Dire au navigateur d’utiliser HTML5
+* [ ] B. Permettre au site de s’afficher à la **largeur du mobile**
+* [ ] C. Empêcher les images de s’afficher
+* [ ] D. Définir la langue du site
+
+### Q4. Dans Tailwind, le préfixe `md:` veut dire…
+
+* [ ] A. “Applique cette classe sous 768px”
+* [ ] B. “Applique cette classe à partir de **768px**”
+* [ ] C. “Applique cette classe seulement en mode sombre”
+* [ ] D. “Applique cette classe sur mobile uniquement”
+
+### Q5. Complète la phrase : “Tailwind est **mobile-first**” signifie que…
+
+* [ ] A. Les classes sans préfixe s’appliquent **sur mobile d’abord**
+* [ ] B. Les classes sans préfixe s’appliquent **à partir du desktop**
+* [ ] C. On doit toujours écrire `md:` même pour mobile
+* [ ] D. Tailwind ne fonctionne pas sur desktop
+
+### Q6. Quel est l’ordre **par défaut** des breakpoints Tailwind ?
+
+* [ ] A. `md` → `sm` → `lg` → `xl`
+* [ ] B. `sm` → `md` → `lg` → `xl` → `2xl`
+* [ ] C. `2xl` → `xl` → `lg` → `md` → `sm`
+* [ ] D. Il n’y a pas d’ordre
+
+### Q7. Quelle classe affiche **rien sur mobile**, mais affiche le bloc **à partir de `md`** ?
+
+* [ ] A. `hidden md:block`
+* [ ] B. `block md:hidden`
+* [ ] C. `flex md:hidden`
+* [ ] D. `md:hidden`
+
+### Q8. Quelle classe rend un bouton plus large sur mobile et plus petit sur grand écran ?
+
+* [ ] A. `w-96 md:w-full`
+* [ ] B. `w-full md:w-1/2`
+* [ ] C. `md:w-full w-1/2`
+* [ ] D. `w-auto md:w-auto`
+
+### Q9. Dans Tailwind, `lg:` correspond (par défaut) à quelle largeur minimale ?
+
+* [ ] A. 480px
+* [ ] B. 640px
+* [ ] C. 768px
+* [ ] D. 1024px
+
+### Q10. Quel est le rôle d’une **media query** en CSS traditionnel ?
+
+* [ ] A. Changer le HTML selon la langue
+* [ ] B. Appliquer du CSS **seulement si une condition d’écran est vraie** (ex : min-width: 768px)
+* [ ] C. Charger un fichier JS externe
+* [ ] D. Bloquer le zoom
+
+### Q11. Laquelle décrit le mieux ce comportement Tailwind ?
+
+```html
+<div class="text-sm md:text-base lg:text-xl">...</div>
+```
+
+* [ ] A. Le texte garde toujours la même taille
+* [ ] B. Le texte **grandit** quand l’écran devient plus large
+* [ ] C. Le texte **rétrécit** sur grand écran
+* [ ] D. Le texte s’affiche seulement sur `lg`
+
+### Q12. Pour faire un layout en 1 colonne sur mobile et 3 colonnes sur grand écran, on peut écrire :
+
+* [ ] A. `grid grid-cols-3`
+* [ ] B. `grid grid-cols-1 md:grid-cols-3`
+* [ ] C. `grid-cols-1-only`
+* [ ] D. `flex md:grid-cols-3`
+
+### Q13. Si on écrit `container mx-auto px-4`, le rôle de `mx-auto` est de…
+
+* [ ] A. Colorer le fond
+* [ ] B. Centrer le container horizontalement
+* [ ] C. Ajouter du padding vertical
+* [ ] D. Activer le responsive
+
+### Q14. Quel est le **problème** si on oublie la meta viewport sur mobile ?
+
+* [ ] A. Le site ne se charge pas
+* [ ] B. Le site s’affiche **trop petit** (zoomé-out) et l’utilisateur doit zoomer lui-même
+* [ ] C. Les images disparaissent
+* [ ] D. Tailwind ne marche plus
+
+### Q15. En responsive, pourquoi fait-on souvent “mobile d’abord” ?
+
+* [ ] A. Parce que c’est plus simple de **partir de petit** et d’ajouter des règles
+* [ ] B. Parce que le desktop est interdit
+* [ ] C. Parce que Tailwind l’impose techniquement
+* [ ] D. Parce que ça évite de faire du HTML
+
+### Q16. Quelle combinaison permet de **cacher sur desktop mais montrer sur mobile** ?
+
+* [ ] A. `hidden md:block`
+* [ ] B. `block md:hidden`
+* [ ] C. `md:block`
+* [ ] D. `lg:hidden md:block`
+
+### Q17. Dans un layout responsive, pourquoi utiliser des unités relatives (%, rem, vw) plutôt que des px partout ?
+
+* [ ] A. Pour que le code soit plus court
+* [ ] B. Pour que le design **s’adapte mieux** aux différentes tailles d’écran
+* [ ] C. Pour désactiver le cache
+* [ ] D. Pour que JavaScript fonctionne
+
+### Q18. Quel est l’intérêt de `aspect-video` ou `aspect-square` en Tailwind ?
+
+* [ ] A. Forcer une **proportion** d’élément même en responsive
+* [ ] B. Charger une vidéo
+* [ ] C. Créer un carrousel automatique
+* [ ] D. Masquer le contenu
+
+### Q19. Pour éviter qu’une image déborde sur mobile, on utilise souvent…
+
+* [ ] A. `w-screen`
+* [ ] B. `max-w-full h-auto`
+* [ ] C. `fixed`
+* [ ] D. `overflow-hidden h-screen`
+
+### Q20. Quelle phrase est correcte à propos de Tailwind et du responsive ?
+
+* [ ] A. Le responsive se fait obligatoirement en écrivant du CSS à la main
+* [ ] B. Le responsive se fait **directement dans les classes** avec les préfixes (`sm:`, `md:`, `lg:`, …)
+* [ ] C. Tailwind ne gère pas le responsive
+* [ ] D. On doit toujours créer un fichier `responsive.css` à part
+
+
+
+
+
+<br/>
+
+### PRATIQUE 2 
+
+Nous allons prendre les valeurs **par défaut** de Tailwind 3.x :
+
+* `text-xs` = **0.75rem** = **12px**
+* `text-sm` = **0.875rem** = **14px**
+* `text-base` = **1rem** = **16px**
+* `text-lg` = **1.125rem** = **18px**
+* `text-xl` = **1.25rem** = **20px**
+* `text-2xl` = **1.5rem** = **24px**
+* `text-3xl` = **1.875rem** = **30px**
+* `text-4xl` = **2.25rem** = **36px**
+
+Breakpoints par défaut :
+
+* `sm:` → **min-width: 640px**
+* `md:` → **min-width: 768px**
+* `lg:` → **min-width: 1024px**
+* `xl:` → **min-width: 1280px**
+
+Spacing :
+
+* `p-4` = **1rem = 16px**
+* `p-6` = **1.5rem = 24px**
+* `px-4` = **16px horizontal**
+* `py-2` = **8px vertical**
+* `py-3` = **12px vertical**
+
+
+
+
+| #  | Description (ce que je veux, avec specs exactes)                                                                                                      | Code à compléter                                                         |
+| -- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 1  | Texte **14px (text-sm)** sur mobile, qui devient **16px (text-base)** dès **768px (md)**                                                              | `<p class="________ ________">Texte</p>`                                 |
+| 2  | Titre **24px (text-2xl)** par défaut, qui devient **30px (text-3xl)** dès **768px (md)**                                                              | `<h2 class="________ ________">Titre</h2>`                               |
+| 3  | Paragraphe en **text-slate-700 (#334155)**, aligné **centre seulement à partir de 768px (md)**                                                        | `<p class="text-slate-700 ________">Texte</p>`                           |
+| 4  | Grille **1 colonne** sur mobile, **2 colonnes** quand largeur ≥ **768px (md)**                                                                        | `<div class="grid ________">...</div>`                                   |
+| 5  | Bouton **largeur 100% (w-full)** sur mobile, puis **largeur auto** dès **md (768px)**                                                                 | `<button class="w-full ________">Valider</button>`                       |
+| 6  | Image responsive : **max-width: 100%**, **hauteur auto**, **centrée**                                                                                 | `<img class="________ ________" src="..." />`                            |
+| 7  | Texte **caché en dessous de 768px**, **affiché à partir de 768px (md)**                                                                               | `<p class="________ ________">Visible sur md</p>`                        |
+| 8  | Carte avec **padding 16px (p-4)** sur mobile, **padding 32px (p-8)** à partir de **768px (md)**, fond blanc, ombre de base                            | `<div class="p-4 ________ bg-white shadow">Contenu</div>`                |
+| 9  | Titre bleu (`text-blue-600`) avec **margin-bottom 8px (mb-2)** sur mobile, mais **16px (mb-4)** dès **md**                                            | `<h3 class="text-blue-600 mb-2 ________">Section</h3>`                   |
+| 10 | Texte **aligné à gauche** par défaut, **aligné à droite** dès **md (768px)**                                                                          | `<p class="text-left ________">Total</p>`                                |
+| 11 | Flex en **colonne** sur mobile, **ligne (row)** dès **md (768px)**                                                                                    | `<div class="flex flex-col ________">...</div>`                          |
+| 12 | Paragraphe **16px (text-base)** par défaut, **18px (text-lg)** quand écran ≥ **1024px (lg)**                                                          | `<p class="text-base ________">Texte</p>`                                |
+| 13 | Bloc avec **fond gris très clair (bg-slate-100)** et **coins arrondis seulement à partir de 768px**                                                   | `<div class="bg-slate-100 ________">Bloc</div>`                          |
+| 14 | Bouton vert avec **padding vertical 8px (py-2)** sur mobile, **padding vertical 12px (py-3)** dès **768px (md)** + **padding horizontal 16px (px-4)** | `<button class="bg-green-600 text-white py-2 ________ px-4">OK</button>` |
+| 15 | Texte **12px (text-xs)** sur mobile, **14px (text-sm)** dès **640px (sm)**, et **16px (text-base)** dès **768px (md)**                                | `<p class="text-xs ________ ________">Texte</p>`                         |
+| 16 | Bloc **visible seulement sur mobile** (en dessous de **768px**), donc **caché (hidden)** dès **md**                                                   | `<div class="________">Mobile only</div>`                                |
+| 17 | Paragraphe **orange (text-orange-500)** sur mobile, qui devient **rouge plus foncé (text-red-600)** dès **768px (md)**                                | `<p class="text-orange-500 ________">Alerte</p>`                         |
+| 18 | Grille responsive : **1 colonne** mobile, **2 colonnes** dès **768px (md)**, **4 colonnes** dès **1024px (lg)**, avec **gap 16px (gap-4)**            | `<div class="grid grid-cols-1 ________ ________ gap-4">...</div>`        |
+| 19 | Paragraphe **centré**, **largeur max 48rem (max-w-xl)**, et **centré horizontalement (mx-auto)** seulement dès **768px (md)**                         | `<p class="text-center max-w-xl ________">Texte</p>`                     |
+| 20 | Titre **30px (text-3xl)** sur mobile, mais **36px (text-4xl)** dès **1024px (lg)**, avec **gras (font-bold)**                                         | `<h1 class="text-3xl ________ font-bold">Titre</h1>`                     |
+
+
+<br/>
+
+### Réponses pratique 2 (version précise)
+
+| #  | Description                      | Code complété                                                                 |
+| -- | -------------------------------- | ----------------------------------------------------------------------------- |
+| 1  | 14px → 16px à 768px              | `<p class="text-sm md:text-base">Texte</p>`                                   |
+| 2  | 24px → 30px à 768px              | `<h2 class="text-2xl md:text-3xl">Titre</h2>`                                 |
+| 3  | Couleur + align center à 768px   | `<p class="text-slate-700 md:text-center">Texte</p>`                          |
+| 4  | 1 col → 2 col à 768px            | `<div class="grid md:grid-cols-2">...</div>`                                  |
+| 5  | w-full → w-auto à 768px          | `<button class="w-full md:w-auto">Valider</button>`                           |
+| 6  | Image responsive + centrée       | `<img class="max-w-full h-auto mx-auto" src="..." />`                         |
+| 7  | Caché mobile → visible à 768px   | `<p class="hidden md:block">Visible sur md</p>`                               |
+| 8  | p-4 (16px) → p-8 (32px)          | `<div class="p-4 md:p-8 bg-white shadow">Contenu</div>`                       |
+| 9  | mb-2 (8px) → mb-4 (16px)         | `<h3 class="text-blue-600 mb-2 md:mb-4">Section</h3>`                         |
+| 10 | left → right à 768px             | `<p class="text-left md:text-right">Total</p>`                                |
+| 11 | col → row à 768px                | `<div class="flex flex-col md:flex-row">...</div>`                            |
+| 12 | 16px → 18px à 1024px             | `<p class="text-base lg:text-lg">Texte</p>`                                   |
+| 13 | arrondi seulement à 768px        | `<div class="bg-slate-100 md:rounded-lg">Bloc</div>`                          |
+| 14 | py-2 (8px) → py-3 (12px) à 768px | `<button class="bg-green-600 text-white py-2 md:py-3 px-4">OK</button>`       |
+| 15 | 12px → 14px → 16px               | `<p class="text-xs sm:text-sm md:text-base">Texte</p>`                        |
+| 16 | visible mobile, caché à 768px    | `<div class="md:hidden">Mobile only</div>`                                    |
+| 17 | orange → rouge à 768px           | `<p class="text-orange-500 md:text-red-600">Alerte</p>`                       |
+| 18 | 1 → 2 → 4 colonnes               | `<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">...</div>` |
+| 19 | centré + mx-auto à 768px         | `<p class="text-center max-w-xl md:mx-auto">Texte</p>`                        |
+| 20 | 30px → 36px à 1024px + gras      | `<h1 class="text-3xl lg:text-4xl font-bold">Titre</h1>`                       |
+
+
+
+
+
+
+
+
 <br/><br/>
 
 ## **PARTIE 3 — Structure sémantique**
