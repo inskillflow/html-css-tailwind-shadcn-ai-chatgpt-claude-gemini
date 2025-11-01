@@ -3456,35 +3456,35 @@ Exemple d’icône avec texte écran seulement :
 * [ ] D. `text-center`
 
 
-**Q1.** ✅ B
-**Explication** : le `alt` sert d’abord aux lecteurs d’écran, ensuite au SEO.
+- **Q1.** ✅ B
+- **Explication** : le `alt` sert d’abord aux lecteurs d’écran, ensuite au SEO.
 
-**Q2.** ✅ A
-**Explication** : 1 seul `h1` par page, le reste en `h2` / `h3`.
+- **Q2.** ✅ A
+- **Explication** : 1 seul `h1` par page, le reste en `h2` / `h3`.
 
-**Q3.** ✅ C
-**Explication** : le lien doit être compréhensible **hors contexte**.
+- **Q3.** ✅ C
+- **Explication** : le lien doit être compréhensible **hors contexte**.
 
-**Q4.** ✅ A
-**Explication** : sans focus visible, un utilisateur clavier est perdu.
+- **Q4.** ✅ A
+- **Explication** : sans focus visible, un utilisateur clavier est perdu.
 
-**Q5.** ✅ B
-**Explication** : on peut enlever l’outline natif **si** on remet un focus Tailwind.
+- **Q5.** ✅ B
+- **Explication** : on peut enlever l’outline natif **si** on remet un focus Tailwind.
 
-**Q6.** ✅ C
-**Explication** : décor → `alt=""` pour ne pas polluer la lecture.
+- **Q6.** ✅ C
+- **Explication** : décor → `alt=""` pour ne pas polluer la lecture.
 
-**Q7.** ✅ B
-**Explication** : `<label for="email">` + `<input id="email">` = accessibilité de base.
+- **Q7.** ✅ B
+- **Explication** : `<label for="email">` + `<input id="email">` = accessibilité de base.
 
-**Q8.** ✅ C
-**Explication** : `text-slate-700` sur `bg-white` = contraste OK.
+- **Q8.** ✅ C
+- **Explication** : `text-slate-700` sur `bg-white` = contraste OK.
 
-**Q9.** ✅ B
-**Explication** : il faut pouvoir **sortir** de la modale au clavier.
+- **Q9.** ✅ B
+- **Explication** : il faut pouvoir **sortir** de la modale au clavier.
 
-**Q10.** ✅ B
-**Explication** : plusieurs “ici” → incompréhensible pour un lecteur d’écran.
+- **Q10.** ✅ B
+- **Explication** : plusieurs “ici” → incompréhensible pour un lecteur d’écran.
 
 
 ### 11.10 — À retenir 
