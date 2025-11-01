@@ -637,66 +637,67 @@ Ensemble : **taille + graisse**.
 ### Code complet à tester
 
 
-
-
 ```html
 <!doctype html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <title>Test balises</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8">
+    <title>Test balises</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-
 
 <body class="bg-slate-50 text-slate-800">
 
+    <header class="sticky top-0 bg-white/90 backdrop-blur border-b">
+        <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="font-semibold text-lg">[Votre Nom] — Dev IA & Cloud</a>
+            <button id="menuBtn" class="md:hidden p-2 border rounded">Menu</button>
+            <ul id="menu" class="hidden md:flex gap-6">
+                <li><a class="hover:text-blue-600 font-semibold" href="#projects">Projets</a></li>
+                <li><a class="hover:text-blue-600 font-semibold" href="ai-demos.html">Démos IA</a></li>
+                <li><a class="hover:text-blue-600 font-semibold" href="cloud-architecture.html">Architecture Cloud</a>
+                </li>
+                <li><a class="hover:text-blue-600 font-semibold" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header class="sticky top-0 bg-white/90 backdrop-blur border-b">
-  <nav class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-    <a href="index.html" class="font-semibold text-lg">[Votre Nom] — Dev IA & Cloud</a>
-    <button id="menuBtn" class="md:hidden p-2 border rounded">Menu</button>
-    <ul id="menu" class="hidden md:flex gap-6">
-      <li><a class="hover:text-blue-600 font-semibold" href="#projects">Projets</a></li>
-      <li><a class="hover:text-blue-600 font-semibold" href="ai-demos.html">Démos IA</a></li>
-      <li><a class="hover:text-blue-600 font-semibold" href="cloud-architecture.html">Architecture Cloud</a></li>
-      <li><a class="hover:text-blue-600 font-semibold" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <main>
+        <section class="relative overflow-hidden border-b">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10"></div>
+            <div class="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
+                <h1 class="text-3xl md:text-5xl font-semibold">Développeur IA & Cloud</h1>
+                <p class="mt-3 max-w-2xl text-slate-700">LLM, RAG, pipelines de données, MLOps, déploiements scalables.
+                </p>
+                <a href="#projects"
+                    class="mt-6 inline-block px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 font-semibold">Voir
+                    mes projets</a>
+            </div>
+        </section>
 
-<main>
-  <section class="relative overflow-hidden border-b">
-    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10"></div>
-    <div class="relative mx-auto max-w-6xl px-4 py-16 md:py-24">
-      <h1 class="text-3xl md:text-5xl font-semibold">Développeur IA & Cloud</h1>
-      <p class="mt-3 max-w-2xl text-slate-700">LLM, RAG, pipelines de données, MLOps, déploiements scalables.</p>
-      <a href="#projects" class="mt-6 inline-block px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 font-semibold">Voir mes projets</a>
-    </div>
-  </section>
+        <section class="mx-auto max-w-6xl px-4 py-12 md:py-16">
+            <h2 class="text-2xl md:text-3xl font-semibold">À propos</h2>
+            <p class="mt-3 text-slate-700">[Votre texte de présentation]</p>
+        </section>
+    </main>
 
-  <section class="mx-auto max-w-6xl px-4 py-12 md:py-16">
-    <h2 class="text-2xl md:text-3xl font-semibold">À propos</h2>
-    <p class="mt-3 text-slate-700">[Votre texte de présentation]</p>
-  </section>
-</main>
+    <footer class="border-t">
+        <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
+            © <span id="year"></span> [Votre Nom]. Tous droits réservés.
+        </div>
+    </footer>
 
-<footer class="border-t">
-  <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
-    © <span id="year"></span> [Votre Nom]. Tous droits réservés.
-  </div>
-</footer>
-
-<script>
-  const btn = document.getElementById('menuBtn');
-  const menu = document.getElementById('menu');
-  btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    <script>
+        const btn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
+        btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>
 ```
 
