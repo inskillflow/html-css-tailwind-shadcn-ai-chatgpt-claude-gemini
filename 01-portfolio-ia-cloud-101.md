@@ -575,49 +575,48 @@ Chaque commande recopiée dans **`git_commands.txt`**.
 
 
 
-## A-1) Carte du site & sections clés
+
+### A-1) Carte du site & sections clés — **verticale (TD)**
 
 ```mermaid
 flowchart TD
-  A[portfolio/]:::dir --> B[index.html]
+  A[portfolio/] --> B[index.html]
   A --> C[ai-demos.html]
   A --> D[cloud-architecture.html]
-  A --> E[assets/]:::dir
+  A --> E[assets/]
   A --> F[README.md]
-  
-  B --> B1[<header> + <nav>]
-  B --> B2[<main> Hero]
-  B --> B3[Section "À propos"]
-  B --> B4[#projects : Cards]
-  B --> B5[#contact : Formulaire]
-  B --> B6[<footer>]
-  
-  C --> C1[Liste des démos]
-  C --> C2[Modale : overlay + boîte centrale]
-  
-  D --> D1[Vue haute-niveau]
-  D --> D2[Sécurité & coûts]
-  
-  classDef dir fill:#eef6ff,stroke:#60a5fa,color:#1e3a8a,stroke-width:1px
+
+  B --> B1[header + nav]
+  B --> B2[main - hero]
+  B --> B3[section a-propos]
+  B --> B4[section projects]
+  B --> B5[section contact]
+  B --> B6[footer]
+
+  C --> C1[list of demos]
+  C --> C2[modal overlay + center box]
+
+  D --> D1[high level view]
+  D --> D2[security and cost]
 ```
 
 
 
-## A-2) Flux d’apprentissage (étudiant → livrables)
+### A-2) Flux d’apprentissage — **vertical (TD)**
 
 ```mermaid
-flowchart LR
-  Start([Début]) --> M0[Lire l'énoncé & TOC]
-  M0 --> M1[PARTIE 0-2 : HTML de base<br/>Titres, paragraphes, liens, listes, images]
-  M1 --> M2[PARTIE 3 : Structure sémantique<br/>header/nav/main/section/footer]
-  M2 --> M3[PARTIE 7 : Tailwind v3 (CDN)<br/>font-semibold, responsive, grid/flex]
-  M3 --> M4[PARTIE 8 : index.html complet]
-  M4 --> M5[PARTIE 9 : ai-demos.html<br/>Modale (ouvrir/fermer)]
-  M5 --> M6[PARTIE 10 : cloud-architecture.html]
-  M6 --> M7[Accessibilité & bonnes pratiques]
-  M7 --> M8[UML classes (école/classe/enseignant/élève)]
-  M8 --> M9[Git local : branches v1→v5, fusions, restauration]
-  M9 --> End([Livrables : dossier portfolio/, .git, README, captures])
+flowchart TD
+  Start([start]) --> M0[read intro and toc]
+  M0 --> M1[parts 0-2: html basics - titles, paragraphs, links, lists, images]
+  M1 --> M2[part 3: semantic structure - header, nav, main, section, footer]
+  M2 --> M3[part 7: tailwind v3 via cdn - font-semibold, responsive, grid, flex]
+  M3 --> M4[part 8: index.html complete]
+  M4 --> M5[part 9: ai-demos.html - modal open and close]
+  M5 --> M6[part 10: cloud-architecture.html]
+  M6 --> M7[accessibility and good practices]
+  M7 --> M8[uml classes - school, class, teacher, student]
+  M8 --> M9[local git - branches v1 to v5, merges, restore]
+  M9 --> End([deliverables - portfolio folder, .git, readme, screenshots])
 ```
 
 
@@ -679,78 +678,9 @@ sequenceDiagram
 
 
 
-## A-5) Ancrages & hiérarchie des titres (rappel pratiques GitHub)
-
-```mermaid
-flowchart TD
-  T1[H1: EXAMEN–COURS — HTML + Tailwind v3] --> T2[H2: PARTIE 0]
-  T2 --> T3[H3: 0.1 — Qu’est-ce qu’une balise ?]
-  T2 --> T4[H3: 0.2 — Attributs essentiels]
-  T1 --> T5[H2: PARTIE 1]
-  T1 --> T6[H2: PARTIE 2]
-  T1 --> T7[H2: ...]
-  note right of T1
-    GitHub génère les ancres sans accents
-    # "Structure sémantique" -> #structure-semantique
-  end note
-```
 
 
 
-
-
-
-Top—les erreurs viennent de 3 choses côté GitHub Mermaid:
-
-1. **guillemets** dans les labels (`"À propos"`), 2) **tags HTML** dans les labels (`<header>`, `<br/>`), 3) **caractères spéciaux** (flèche →).
-   Voici les versions **corrigées, prêtes à coller** (sans HTML, sans guillemets, ASCII simple).
-
----
-
-### A-1) Carte du site & sections clés (fixé)
-
-```mermaid
-flowchart TD
-  A[portfolio/] --> B[index.html]
-  A --> C[ai-demos.html]
-  A --> D[cloud-architecture.html]
-  A --> E[assets/]
-  A --> F[README.md]
-
-  B --> B1[header + nav]
-  B --> B2[main - hero]
-  B --> B3[section A-propos]
-  B --> B4[section projects]
-  B --> B5[section contact]
-  B --> B6[footer]
-
-  C --> C1[list of demos]
-  C --> C2[modal overlay + center box]
-
-  D --> D1[high level view]
-  D --> D2[security and cost]
-```
-
----
-
-### A-2) Flux d’apprentissage (fixé)
-
-```mermaid
-flowchart LR
-  Start([Start]) --> M0[Read intro and TOC]
-  M0 --> M1[Parts 0-2: HTML basics - titles, paragraphs, links, lists, images]
-  M1 --> M2[Part 3: Semantic structure - header, nav, main, section, footer]
-  M2 --> M3[Part 7: Tailwind v3 via CDN - font-semibold, responsive, grid, flex]
-  M3 --> M4[Part 8: index.html complete]
-  M4 --> M5[Part 9: ai-demos.html - modal open and close]
-  M5 --> M6[Part 10: cloud-architecture.html]
-  M6 --> M7[Accessibility and good practices]
-  M7 --> M8[UML classes - school, class, teacher, student]
-  M8 --> M9[Local Git - branches v1 to v5, merges, restore]
-  M9 --> End([Deliverables - portfolio folder, .git, README, screenshots])
-```
-
----
 
 ### A-5) Ancrages & hiérarchie des titres (fixé, simplifié)
 
