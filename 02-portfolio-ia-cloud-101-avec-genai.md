@@ -21,13 +21,39 @@
 12. [Optimisation et validation finale](#partie-12-validation-finale)
 
 
-> Références:
 
--  https://claude.ai/new
--  https://chatgpt.com/
--  https://gemini.google.com/app
--  https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/01-introduction-ia-ml-gen.md
--  https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/02-pratique-1-introduction-ia-ml-gen.md
+# Références
+
+Une sélection de ressources à consulter pour l’IA générative, le prototypage rapide et les ateliers AWS.
+
+## 1. Assistants IA généralistes
+
+1. **Claude**  
+   Service d’IA conversationnelle d’Anthropic, très performant sur les longues sorties et l’analyse de documents.  
+   → https://claude.ai/new
+
+2. **ChatGPT**  
+   Interface d’OpenAI, idéale pour la génération de code, la rédaction pédagogique et les assistants spécialisés.  
+   → https://chatgpt.com/
+
+3. **Google Gemini**  
+   Accès aux modèles multimodaux de Google, utile pour les cas d’usage Google Workspace et la génération de contenu.  
+   → https://gemini.google.com/app
+
+---
+
+## 2. Contenu pédagogique InSkillFlow / AWS
+
+4. **01 – Introduction IA / ML / IA générative (GitHub)**  
+   Document d’introduction aux fondements de l’IA générative, positionnement, vocabulaire et contexte AWS.  
+   → https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/01-introduction-ia-ml-gen.md
+
+5. **02 – Pratique 1 : Introduction IA / ML / IA générative (GitHub)**  
+   Première pratique guidée pour manipuler les concepts vus dans l’introduction et les appliquer dans un atelier structuré.  
+   → https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/02-pratique-1-introduction-ia-ml-gen.md
+
+
+<br/>
 
 ## PARTIE 1 : INTRODUCTION
 
