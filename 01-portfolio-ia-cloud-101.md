@@ -227,146 +227,148 @@ Créez `portfolio/balises-test.html` et collez :
 ### QUIZ 1
 
 
+
 ### Q1. Où doit se trouver `<!doctype html>` ?
 
-A. À la fin du fichier
-B. En première ligne du document
-C. Après la balise `<head>`
-D. Juste avant `</html>`
+* [ ] A. À la fin du fichier
+* [ ] B. En première ligne du document
+* [ ] C. Après la balise `<head>`
+* [ ] D. Juste avant `</html>`
 
 ### Q2. Le rôle principal de `<!doctype html>` est de…
 
-A. Charger Tailwind
-B. Indiquer au navigateur d’utiliser le standard HTML5
-C. Définir l’encodage UTF-8
-D. Rendre la page responsive sur mobile
+* [ ] A. Charger Tailwind
+* [ ] B. Indiquer au navigateur d’utiliser le standard HTML5
+* [ ] C. Définir l’encodage UTF-8
+* [ ] D. Rendre la page responsive sur mobile
 
-### Q3. Dans `<html lang="fr">`, l’attribut `lang` sert (choix multiples) :
+### Q3. Dans `<html lang="fr">`, l’attribut `lang` sert *(choix multiples)* :
 
-A. À l’accessibilité (lecteurs d’écran)
-B. À la sélection automatique de polices adaptées
-C. À l’auto-détection du fuseau horaire
-D. Au SEO (meilleure indexation linguistique)
+* [ ] A. À l’accessibilité (lecteurs d’écran)
+* [ ] B. À la sélection automatique de polices adaptées
+* [ ] C. À l’auto-détection du fuseau horaire
+* [ ] D. Au SEO (meilleure indexation linguistique)
 
 ### Q4. Où placer **idéalement** `<meta charset="utf-8">` ?
 
-A. N’importe où dans `<body>`
-B. Tout en haut de `<head>`
-C. Après `<title>`
-D. En bas de la page
+* [ ] A. N’importe où dans `<body>`
+* [ ] B. Tout en haut de `<head>`
+* [ ] C. Après `<title>`
+* [ ] D. En bas de la page
 
 ### Q5. Quel élément **appartient** au `<head>` ?
 
-A. `<h1>`
-B. `<p>`
-C. `<meta name="description" …>`
-D. `<section>`
+* [ ] A. `<h1>`
+* [ ] B. `<p>`
+* [ ] C. `<meta name="description" …>`
+* [ ] D. `<section>`
 
 ### Q6. Le meilleur libellé pour `<title>` d’un portfolio court est :
 
-A. `Mon site`
-B. `Portfolio — IA & Cloud | [Votre Nom]`
-C. `Bienvenue sur mon super site web personnel de démonstration`
-D. `Page 1`
+* [ ] A. `Mon site`
+* [ ] B. `Portfolio — IA & Cloud | [Votre Nom]`
+* [ ] C. `Bienvenue sur mon super site web personnel de démonstration`
+* [ ] D. `Page 1`
 
-### Q7. La meta-description efficace est (choix multiples) :
+### Q7. La meta-description efficace est *(choix multiples)* :
 
-A. Une phrase naturelle ≤ 160 caractères
-B. Une liste de mots-clés séparés par des virgules
-C. Un paragraphe de 500 caractères
-D. Un résumé clair du contenu de la page
+* [ ] A. Une phrase naturelle ≤ 160 caractères
+* [ ] B. Une liste de mots-clés séparés par des virgules
+* [ ] C. Un paragraphe de 500 caractères
+* [ ] D. Un résumé clair du contenu de la page
 
 ### Q8. Que fait la meta viewport suivante ?
 
 `<meta name="viewport" content="width=device-width, initial-scale=1">`
-A. Empêche le zoom utilisateur
-B. Adapte la largeur au périphérique
-C. Active le mode sombre
-D. Définit le zoom initial à 1
+
+* [ ] A. Empêche le zoom utilisateur
+* [ ] B. Adapte la largeur au périphérique
+* [ ] C. Active le mode sombre
+* [ ] D. Définit le zoom initial à 1
 
 ### Q9. Pour **prototyper** rapidement Tailwind sans installation, on utilise :
 
-A. `<link rel="stylesheet" href="tailwind.css">` local
-B. `<script src="https://cdn.tailwindcss.com"></script>`
-C. `npm install tailwindcss` + build
-D. `<style> @tailwind utilities; </style>` seul
+* [ ] A. `<link rel="stylesheet" href="tailwind.css">` local
+* [ ] B. `<script src="https://cdn.tailwindcss.com"></script>`
+* [ ] C. `npm install tailwindcss` + build
+* [ ] D. `<style> @tailwind utilities; </style>` seul
 
 ### Q10. En production à trafic élevé, la meilleure approche Tailwind est :
 
-A. Play CDN tel quel
-B. Aucune feuille de style
-C. Installation via npm + purge/minification
-D. Tout mettre en inline style
+* [ ] A. Play CDN tel quel
+* [ ] B. Aucune feuille de style
+* [ ] C. Installation via npm + purge/minification
+* [ ] D. Tout mettre en inline style
 
-### Q11. Dans `<body class="antialiased text-slate-800 bg-white">`, associe chaque classe à son effet (choix multiples) :
+### Q11. Dans `<body class="antialiased text-slate-800 bg-white">`, associe chaque classe à son effet *(choix multiples)* :
 
-A. `antialiased` → lissage du rendu typographique
-B. `text-slate-800` → couleur de texte gris foncé lisible
-C. `bg-white` → fond blanc
-D. `antialiased` → active le responsive
+* [ ] A. `antialiased` → lissage du rendu typographique
+* [ ] B. `text-slate-800` → couleur de texte gris foncé lisible
+* [ ] C. `bg-white` → fond blanc
+* [ ] D. `antialiased` → active le responsive
 
 ### Q12. Différence correcte entre `class` et `id` :
 
-A. `class` = réutilisable ; `id` = unique dans la page
-B. `class` = unique ; `id` = réutilisable
-C. Les deux sont toujours uniques
-D. Aucune différence fonctionnelle
+* [ ] A. `class` = réutilisable ; `id` = unique dans la page
+* [ ] B. `class` = unique ; `id` = réutilisable
+* [ ] C. Les deux sont toujours uniques
+* [ ] D. Aucune différence fonctionnelle
 
-### Q13. Quels éléments doivent **obligatoirement** être dans `<body>` (choix multiples) ?
+### Q13. Quels éléments doivent **obligatoirement** être dans `<body>` *(choix multiples)* ?
 
-A. Contenu visible (titres, paragraphes)
-B. `<meta charset="utf-8">`
-C. Sections de page (`<main>`, `<section>`)
-D. `<title>`
+* [ ] A. Contenu visible (titres, paragraphes)
+* [ ] B. `<meta charset="utf-8">`
+* [ ] C. Sections de page (`<main>`, `<section>`)
+* [ ] D. `<title>`
 
 ### Q14. Quel ordre est le plus approprié ?
 
-A. `<body> → <head> → <!doctype html> → </html>`
-B. `<!doctype html> → <html> → <head> → </head> → <body> → </body> → </html>`
-C. `<html> → <!doctype html> → <head> → <body> → </html>`
-D. `<!doctype html> → <head> → <body> → <html>`
+* [ ] A. `<body> → <head> → <!doctype html> → </html>`
+* [ ] B. `<!doctype html> → <html> → <head> → </head> → <body> → </body> → </html>`
+* [ ] C. `<html> → <!doctype html> → <head> → <body> → </html>`
+* [ ] D. `<!doctype html> → <head> → <body> → <html>`
 
-### Q15. Quelle affirmation est correcte concernant le **SEO** (choix multiples) ?
+### Q15. Quelle affirmation est correcte concernant le **SEO** *(choix multiples)* ?
 
-A. Le `<title>` influence l’extrait affiché sous le lien
-B. La meta-description peut apparaître dans les résultats
-C. `lang="fr"` peut aider l’indexation linguistique
-D. `antialiased` améliore le ranking
+* [ ] A. Le `<title>` influence l’extrait affiché sous le lien
+* [ ] B. La meta-description peut apparaître dans les résultats
+* [ ] C. `lang="fr"` peut aider l’indexation linguistique
+* [ ] D. `antialiased` améliore le ranking
 
 ### Q16. Placer un `<h1>` dans le `<head>` :
 
-A. Est valide et recommandé
-B. Est invalide : contenu visible dans `<body>`
-C. N’a aucun effet, le navigateur l’ignore
-D. Est requis pour le responsive
+* [ ] A. Est valide et recommandé
+* [ ] B. Est invalide : contenu visible dans `<body>`
+* [ ] C. N’a aucun effet, le navigateur l’ignore
+* [ ] D. Est requis pour le responsive
 
-### Q17. Quels risques en l’absence de `<!doctype html>` (choix multiples) ?
+### Q17. Quels risques en l’absence de `<!doctype html>` *(choix multiples)* ?
 
-A. Passage en *quirks mode*
-B. Rendu CSS potentiellement incohérent
-C. Désactivation de JavaScript
-D. Encodage invalide garanti
+* [ ] A. Passage en *quirks mode*
+* [ ] B. Rendu CSS potentiellement incohérent
+* [ ] C. Désactivation de JavaScript
+* [ ] D. Encodage invalide garanti
 
 ### Q18. Exemple valide d’attribut `lang` spécifique :
 
-A. `lang="fr-CA"`
-B. `lang="french"`
-C. `lang="fr_CA"`
-D. `lang="ca-fr"`
+* [ ] A. `lang="fr-CA"`
+* [ ] B. `lang="french"`
+* [ ] C. `lang="fr_CA"`
+* [ ] D. `lang="ca-fr"`
 
 ### Q19. À propos de la **taille** du CSS avec Play CDN :
 
-A. Elle contient beaucoup de classes inutilisées
-B. Elle est purgée automatiquement au build
-C. Elle est idéale pour optimiser la perf en prod
-D. Elle n’existe pas : Tailwind ne charge rien
+* [ ] A. Elle contient beaucoup de classes inutilisées
+* [ ] B. Elle est purgée automatiquement au build
+* [ ] C. Elle est idéale pour optimiser la perf en prod
+* [ ] D. Elle n’existe pas : Tailwind ne charge rien
 
-### Q20. Quels éléments sont des **métadonnées** de page (choix multiples) ?
+### Q20. Quels éléments sont des **métadonnées** de page *(choix multiples)* ?
 
-A. `<meta name="viewport" …>`
-B. `<meta name="description" …>`
-C. `<h1>`
-D. `<title>`
+* [ ] A. `<meta name="viewport" …>`
+* [ ] B. `<meta name="description" …>`
+* [ ] C. `<h1>`
+* [ ] D. `<title>`
 
 
 
