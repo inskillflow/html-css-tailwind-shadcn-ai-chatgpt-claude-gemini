@@ -33,7 +33,102 @@
 
 <br/><br/>
 
+> Explications des classes Tailwind
 
+## C'est quoi text-slate-700 ?
+
+`text-slate-700` en Tailwind, c’est juste une **classe utilitaire** qui dit :
+
+> “mets la **couleur de texte** `slate` au **niveau 700**”.
+
+> Quelques points rapides :
+
+* **`text-...`** → ça touche **la couleur du texte**.
+* **`slate`** → c’est une famille de couleurs grises/bleutées que Tailwind fournit (comme `gray`, `zinc`, `neutral`, etc.).
+* **`700`** → c’est le **degré de foncé**. Plus le nombre est haut (100 → 900), plus c’est foncé.
+
+  * `slate-100` = très clair
+  * `slate-700` = assez foncé
+  * `slate-900` = presque noir
+
+Dans la config Tailwind par défaut, `text-slate-700` correspond à la couleur **#334155** (un gris froid lisible).
+
+> Exemple :
+
+```html
+<p class="text-slate-700">
+  Ce texte utilise la couleur slate 700 de Tailwind.
+</p>
+```
+
+Donc : **c’est juste une couleur de texte prête à l’emploi, plus douce que le noir pur (`text-black`) et plus lisible que du gris trop clair.**
+
+<br/>
+
+## C'est quoi p-6 ?
+
+`p-6` en Tailwind, ça veut dire **“padding de 6”** sur **tous les côtés** (haut, bas, gauche, droite).
+
+Un peu plus en détail :
+
+* `p-...` → padding **global** (si tu veux haut seulement c’est `pt-6`, gauche `pl-6`, etc.)
+* `6` → c’est une **valeur Tailwind** dans l’échelle de spacing.
+* Dans l’échelle par défaut, `6` = **1.5rem** = **24px**.
+
+Donc :
+
+```html
+<div class="p-6 bg-slate-100">
+  Contenu avec 24px de padding partout.
+</div>
+```
+
+Si tu vois :
+
+* `p-4` → 16px
+* `p-6` → 24px
+* `p-8` → 32px
+
+
+*(Et tu peux combiner : `px-6` = padding horizontal 24px, `py-3` = vertical 12px, etc.)*
+
+
+<br/>
+
+## C'est quoi text-2xl et font-semibold ?
+
+- `text-2xl` et `font-semibold` sont deux utilitaires Tailwind différents :
+
+1. **`text-2xl`**
+
+   * Ça règle **la taille du texte**.
+   * Dans Tailwind par défaut :
+
+     * `text-base` ≈ 16px
+     * `text-xl` ≈ 20px
+     * **`text-2xl` ≈ 24px** (1.5rem)
+   * Donc c’est pour un titre ou un sous-titre un peu gros.
+
+   ```html
+   <h2 class="text-2xl">Sous-titre</h2>
+   ```
+
+2. **`font-semibold`**
+
+   * Ça règle **l’épaisseur de la police**.
+   * `font-normal` → poids 400
+   * `font-medium` → 500
+   * **`font-semibold` → 600**
+   * `font-bold` → 700
+   * Donc `font-semibold` = un peu moins gras que `bold`, très utilisé pour les titres ou labels.
+
+   ```html
+   <p class="text-2xl font-semibold">
+     Titre lisible et un peu gras
+   </p>
+   ```
+
+Ensemble : **taille + graisse**.
 
 
 
