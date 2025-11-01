@@ -4341,16 +4341,16 @@ echo "79. git add NOTES.md && git commit -m \"docs: note finale examen local\"" 
 
 ### 12.9 — QUIZ 12 — Réponses
 
-**Q1.** ✅ B — `git init` crée un dépôt vide dans le dossier courant.
-**Q2.** ✅ B — `git switch -c nom-branche` = créer + basculer.
-**Q3.** ✅ C — c’est la commande complète de visualisation.
-**Q4.** ✅ B — `git reflog` permet de revenir sur des états qui ne sont plus dans `git log`.
-**Q5.** ✅ B — on résout, on `git add`, ensuite seulement on commit le merge.
-**Q6.** ✅ B — l’examen est explicitement “local uniquement”.
-**Q7.** ✅ A — `git branch -d nom` supprime une branche fusionnée.
-**Q8.** ✅ B — `git restore` est la commande moderne pour restaurer un fichier.
-**Q9.** ✅ B — on revient sur la branche principale avec `git switch main`.
-**Q10.** ✅ B — c’est le **support de correction**.
+- **Q1.** ✅ B — `git init` crée un dépôt vide dans le dossier courant.
+- **Q2.** ✅ B — `git switch -c nom-branche` = créer + basculer.
+- **Q3.** ✅ C — c’est la commande complète de visualisation.
+- **Q4.** ✅ B — `git reflog` permet de revenir sur des états qui ne sont plus dans `git log`.
+- **Q5.** ✅ B — on résout, on `git add`, ensuite seulement on commit le merge.
+- **Q6.** ✅ B — l’examen est explicitement “local uniquement”.
+- **Q7.** ✅ A — `git branch -d nom` supprime une branche fusionnée.
+- **Q8.** ✅ B — `git restore` est la commande moderne pour restaurer un fichier.
+- **Q9.** ✅ B — on revient sur la branche principale avec `git switch main`.
+- **Q10.** ✅ B — c’est le **support de correction**.
 
 
 
@@ -4657,11 +4657,11 @@ Donc : **GitHub est au centre**. Sans GitHub, Vercel n’a rien à surveiller.
 
 ### 13.13 — QUIZ 13 — Réponses
 
-**Q1.** ✅ C — *Local → GitHub → Vercel*
-**Q2.** ✅ A — Vercel regarde tes dépôts Git reliés.
-**Q3.** ✅ A — un simple `index.html` suffit pour un site statique.
-**Q4.** ✅ B — c’est le principe “Git → Deploy”.
-**Q5.** ✅ B — on indique le bon dossier.
+- **Q1.** ✅ C — *Local → GitHub → Vercel*
+- **Q2.** ✅ A — Vercel regarde tes dépôts Git reliés.
+- **Q3.** ✅ A — un simple `index.html` suffit pour un site statique.
+- **Q4.** ✅ B — c’est le principe “Git → Deploy”.
+- **Q5.** ✅ B — on indique le bon dossier.
 
 
 
