@@ -1,4 +1,4 @@
-# PROJET FINAL : Page Portfolio Ultra-Professionnelle
+# PROJET FINAL : Page Portfolio Ultra-Professionnelle avec du prompt engineeing
 
 
 **Objectif : Construire une page qui impressionne, étape par étape**  
