@@ -576,10 +576,10 @@ Chaque commande recopiée dans **`git_commands.txt`**.
 
 
 
-### A-1) Carte du site & sections clés — **verticale (TD)**
+# A-1 — Carte du site 
 
 ```mermaid
-flowchart TD
+flowchart LR
   A[portfolio/] --> B[index.html]
   A --> C[ai-demos.html]
   A --> D[cloud-architecture.html]
@@ -599,6 +599,7 @@ flowchart TD
   D --> D1[high level view]
   D --> D2[security and cost]
 ```
+
 
 
 
@@ -696,80 +697,5 @@ flowchart TD
 ```
 
 
-Tu as raison—ta capture montre un rendu plutôt **horizontal**. GitHub/Mermaid peut “compacter” même en `TD`. Pour **forcer la verticale**, on peut :
 
-1. garder `flowchart TD` **et** regrouper chaque page dans un **subgraph** en `direction TB`;
-2. ou utiliser `TB` (équivalent) + sous-graphes pour casser le compactage.
-
-Je te donne **A-1 vertical forcé** + **A-1 horizontal** (les deux prêts à coller).
-
----
-
-### ✅ A-1 — Carte du site (vertical forcé)
-
-```mermaid
-flowchart TD
-  A[portfolio/]
-
-  %% pages au même rang, sous-graphes en colonne
-  A --> B
-  A --> C
-  A --> D
-  A --> E
-  A --> F
-
-  subgraph B[index.html]
-  direction TB
-    B1[header + nav]
-    B2[main - hero]
-    B3[section a-propos]
-    B4[section projects]
-    B5[section contact]
-    B6[footer]
-  end
-
-  subgraph C[ai-demos.html]
-  direction TB
-    C1[list of demos]
-    C2[modal overlay + center box]
-  end
-
-  subgraph D[cloud-architecture.html]
-  direction TB
-    D1[high level view]
-    D2[security and cost]
-  end
-
-  E[assets/]
-  F[README.md]
-```
-
----
-
-### ↔️ A-1 — Carte du site (horizontal)
-
-```mermaid
-flowchart LR
-  A[portfolio/] --> B[index.html]
-  A --> C[ai-demos.html]
-  A --> D[cloud-architecture.html]
-  A --> E[assets/]
-  A --> F[README.md]
-
-  B --> B1[header + nav]
-  B --> B2[main - hero]
-  B --> B3[section a-propos]
-  B --> B4[section projects]
-  B --> B5[section contact]
-  B --> B6[footer]
-
-  C --> C1[list of demos]
-  C --> C2[modal overlay + center box]
-
-  D --> D1[high level view]
-  D --> D2[security and cost]
-```
-
-> Astuces GitHub : évite guillemets/accents dans les labels si ça “casse” le parser; zoome/scroll dans l’aperçu si le graphe déborde.
-> Tu veux que je convertisse **A-2** (flux d’apprentissage) en vertical forcé aussi ?
 
