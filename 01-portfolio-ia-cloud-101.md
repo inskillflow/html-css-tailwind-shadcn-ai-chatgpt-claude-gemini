@@ -33,6 +33,11 @@
 
 <br/><br/>
 
+
+
+
+
+
 ## **PARTIE 0 — Principes & lecture d’une balise**
 
 [Retour 🔙 à la table des matières](#toc)
@@ -562,3 +567,140 @@ Chaque commande recopiée dans **`git_commands.txt`**.
 * Titres des cards de projet
 
 > Astuce : supprimez temporairement `font-semibold`, observez la perte de hiérarchie visuelle, puis remettez-la.
+
+
+
+# Annexes
+
+
+
+
+## A-1) Carte du site & sections clés
+
+```mermaid
+flowchart TD
+  A[portfolio/]:::dir --> B[index.html]
+  A --> C[ai-demos.html]
+  A --> D[cloud-architecture.html]
+  A --> E[assets/]:::dir
+  A --> F[README.md]
+  
+  B --> B1[<header> + <nav>]
+  B --> B2[<main> Hero]
+  B --> B3[Section "À propos"]
+  B --> B4[#projects : Cards]
+  B --> B5[#contact : Formulaire]
+  B --> B6[<footer>]
+  
+  C --> C1[Liste des démos]
+  C --> C2[Modale : overlay + boîte centrale]
+  
+  D --> D1[Vue haute-niveau]
+  D --> D2[Sécurité & coûts]
+  
+  classDef dir fill:#eef6ff,stroke:#60a5fa,color:#1e3a8a,stroke-width:1px
+```
+
+
+
+## A-2) Flux d’apprentissage (étudiant → livrables)
+
+```mermaid
+flowchart LR
+  Start([Début]) --> M0[Lire l'énoncé & TOC]
+  M0 --> M1[PARTIE 0-2 : HTML de base<br/>Titres, paragraphes, liens, listes, images]
+  M1 --> M2[PARTIE 3 : Structure sémantique<br/>header/nav/main/section/footer]
+  M2 --> M3[PARTIE 7 : Tailwind v3 (CDN)<br/>font-semibold, responsive, grid/flex]
+  M3 --> M4[PARTIE 8 : index.html complet]
+  M4 --> M5[PARTIE 9 : ai-demos.html<br/>Modale (ouvrir/fermer)]
+  M5 --> M6[PARTIE 10 : cloud-architecture.html]
+  M6 --> M7[Accessibilité & bonnes pratiques]
+  M7 --> M8[UML classes (école/classe/enseignant/élève)]
+  M8 --> M9[Git local : branches v1→v5, fusions, restauration]
+  M9 --> End([Livrables : dossier portfolio/, .git, README, captures])
+```
+
+
+
+## A-3) Workflow Git de l’examen (branches en cascade + fusions)
+
+```mermaid
+gitGraph
+  commit id: "Init README.md"
+  branch v1
+  checkout v1
+  commit id:"log.txt: version 1"
+  branch v2
+  checkout v2
+  commit id:"log.txt: version 2"
+  branch v3
+  checkout v3
+  commit id:"log.txt: version 3"
+  branch v4
+  checkout v4
+  commit id:"log.txt: version 4"
+  branch v5
+  checkout v5
+  commit id:"log.txt: version 5"
+  
+  checkout v4
+  merge v5 tag:"merge v5->v4"
+  checkout v3
+  merge v4 tag:"merge v4->v3"
+  checkout v2
+  merge v3 tag:"merge v3->v2"
+  checkout v1
+  merge v2 tag:"merge v2->v1"
+  checkout main
+  merge v1 tag:"merge v1->main"
+```
+
+
+
+## A-4) Séquence d’ouverture/fermeture de la modale (`ai-demos.html`)
+
+```mermaid
+sequenceDiagram
+  participant U as Utilisateur
+  participant UI as Page ai-demos.html
+  participant JS as Script (DOM)
+  participant MOD as Modale
+
+  U->>UI: Clique sur bouton "Voir la démo"
+  UI->>JS: eventListener(click) sur #openModal
+  JS->>MOD: removeClass(hidden) + addClass(flex)
+  Note right of MOD: Modale visible (overlay + contenu)
+
+  U->>UI: Clique sur bouton "Fermer"
+  UI->>JS: eventListener(click) sur #closeModal
+  JS->>MOD: addClass(hidden) + removeClass(flex)
+  Note right of MOD: Modale masquée
+```
+
+
+
+## A-5) Ancrages & hiérarchie des titres (rappel pratiques GitHub)
+
+```mermaid
+flowchart TD
+  T1[H1: EXAMEN–COURS — HTML + Tailwind v3] --> T2[H2: PARTIE 0]
+  T2 --> T3[H3: 0.1 — Qu’est-ce qu’une balise ?]
+  T2 --> T4[H3: 0.2 — Attributs essentiels]
+  T1 --> T5[H2: PARTIE 1]
+  T1 --> T6[H2: PARTIE 2]
+  T1 --> T7[H2: ...]
+  note right of T1
+    GitHub génère les ancres sans accents
+    # "Structure sémantique" -> #structure-semantique
+  end note
+```
+
+
+
+### Astuces d’intégration
+
+* Place le **diagramme 1** en haut de ton `README.md` (juste après le titre) pour situer immédiatement l’étudiant.
+* Mets le **diagramme 2** sous la Table des matières pour visualiser le parcours.
+* Garde le **gitGraph** dans la section Git (PARTIE 12) pour que les étudiants voient la cible des commandes 1→79.
+* Colle la **séquence de modale** dans PARTIE 9, juste avant le code `ai-demos.html`.
+
