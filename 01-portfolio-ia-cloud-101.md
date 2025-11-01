@@ -697,10 +697,72 @@ flowchart TD
 
 
 
-### Astuces d’intégration
 
-* Place le **diagramme 1** en haut de ton `README.md` (juste après le titre) pour situer immédiatement l’étudiant.
-* Mets le **diagramme 2** sous la Table des matières pour visualiser le parcours.
-* Garde le **gitGraph** dans la section Git (PARTIE 12) pour que les étudiants voient la cible des commandes 1→79.
-* Colle la **séquence de modale** dans PARTIE 9, juste avant le code `ai-demos.html`.
+
+
+Top—les erreurs viennent de 3 choses côté GitHub Mermaid:
+
+1. **guillemets** dans les labels (`"À propos"`), 2) **tags HTML** dans les labels (`<header>`, `<br/>`), 3) **caractères spéciaux** (flèche →).
+   Voici les versions **corrigées, prêtes à coller** (sans HTML, sans guillemets, ASCII simple).
+
+---
+
+### A-1) Carte du site & sections clés (fixé)
+
+```mermaid
+flowchart TD
+  A[portfolio/] --> B[index.html]
+  A --> C[ai-demos.html]
+  A --> D[cloud-architecture.html]
+  A --> E[assets/]
+  A --> F[README.md]
+
+  B --> B1[header + nav]
+  B --> B2[main - hero]
+  B --> B3[section A-propos]
+  B --> B4[section projects]
+  B --> B5[section contact]
+  B --> B6[footer]
+
+  C --> C1[list of demos]
+  C --> C2[modal overlay + center box]
+
+  D --> D1[high level view]
+  D --> D2[security and cost]
+```
+
+---
+
+### A-2) Flux d’apprentissage (fixé)
+
+```mermaid
+flowchart LR
+  Start([Start]) --> M0[Read intro and TOC]
+  M0 --> M1[Parts 0-2: HTML basics - titles, paragraphs, links, lists, images]
+  M1 --> M2[Part 3: Semantic structure - header, nav, main, section, footer]
+  M2 --> M3[Part 7: Tailwind v3 via CDN - font-semibold, responsive, grid, flex]
+  M3 --> M4[Part 8: index.html complete]
+  M4 --> M5[Part 9: ai-demos.html - modal open and close]
+  M5 --> M6[Part 10: cloud-architecture.html]
+  M6 --> M7[Accessibility and good practices]
+  M7 --> M8[UML classes - school, class, teacher, student]
+  M8 --> M9[Local Git - branches v1 to v5, merges, restore]
+  M9 --> End([Deliverables - portfolio folder, .git, README, screenshots])
+```
+
+---
+
+### A-5) Ancrages & hiérarchie des titres (fixé, simplifié)
+
+```mermaid
+flowchart TD
+  H1[H1: EXAMEN-COURS HTML + Tailwind v3] --> P0[H2: PARTIE 0]
+  P0 --> P01[H3: 0.1 Qu est-ce qu une balise]
+  P0 --> P02[H3: 0.2 Attributs essentiels]
+  H1 --> P1[H2: PARTIE 1]
+  H1 --> P2[H2: PARTIE 2]
+  H1 --> Pn[H2: ...]
+  N1[GitHub anchors rule] --> N2[Example anchor id: #structure-semantique]
+```
+
 
