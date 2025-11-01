@@ -33,6 +33,55 @@
 
 <br/><br/>
 
+
+
+## **PARTIE 0 — Principes & lecture d’une balise**
+
+[Retour 🔙 à la table des matières](#toc)
+
+### 0.1 — Qu’est-ce qu’une balise ?
+
+* **Syntaxe générique** : `<nomBalise attribut="valeur">contenu</nomBalise>`
+* **Balise ouvrante** : `<p>` ; **balise fermante** : `</p>`.
+* **Attribut** : info ajoutée dans l’ouvrante, ex. `class="text-slate-700"` (Tailwind).
+
+**Exemple**
+
+```html
+<p class="text-slate-700">Bonjour</p>
+```
+
+* `<p>` : paragraphe
+* `class="text-slate-700"` : couleur de texte (gris foncé)
+
+### 0.2 — Attributs essentiels
+
+* `class="..."` (styles), `id="..."` (identifiant), `href="..."`/`src="..."` (lien/source), `alt="..."` (accessibilité)
+
+**À faire (mini-exercice)**
+Créez `portfolio/balises-test.html` et collez :
+
+```html
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Test balises</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6">
+  <h1 class="text-2xl font-semibold">Titre principal (H1)</h1>
+  <p>Un paragraphe de test.</p>
+  <a href="#ancre" class="text-blue-600 hover:underline">Aller plus bas</a>
+  <img src="assets/inexistante.png" alt="Description de l’image" class="mt-4 w-40 h-24 object-cover">
+  <div id="ancre" class="mt-10">Ancre atteinte.</div>
+</body>
+</html>
+```
+
+
+
 > Explications des classes Tailwind
 
 ## C'est quoi text-slate-700 ?
@@ -132,51 +181,6 @@ Ensemble : **taille + graisse**.
 
 
 
-
-## **PARTIE 0 — Principes & lecture d’une balise**
-
-[Retour 🔙 à la table des matières](#toc)
-
-### 0.1 — Qu’est-ce qu’une balise ?
-
-* **Syntaxe générique** : `<nomBalise attribut="valeur">contenu</nomBalise>`
-* **Balise ouvrante** : `<p>` ; **balise fermante** : `</p>`.
-* **Attribut** : info ajoutée dans l’ouvrante, ex. `class="text-slate-700"` (Tailwind).
-
-**Exemple**
-
-```html
-<p class="text-slate-700">Bonjour</p>
-```
-
-* `<p>` : paragraphe
-* `class="text-slate-700"` : couleur de texte (gris foncé)
-
-### 0.2 — Attributs essentiels
-
-* `class="..."` (styles), `id="..."` (identifiant), `href="..."`/`src="..."` (lien/source), `alt="..."` (accessibilité)
-
-**À faire (mini-exercice)**
-Créez `portfolio/balises-test.html` et collez :
-
-```html
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Test balises</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="p-6">
-  <h1 class="text-2xl font-semibold">Titre principal (H1)</h1>
-  <p>Un paragraphe de test.</p>
-  <a href="#ancre" class="text-blue-600 hover:underline">Aller plus bas</a>
-  <img src="assets/inexistante.png" alt="Description de l’image" class="mt-4 w-40 h-24 object-cover">
-  <div id="ancre" class="mt-10">Ancre atteinte.</div>
-</body>
-</html>
-```
 
 <br/>
 
