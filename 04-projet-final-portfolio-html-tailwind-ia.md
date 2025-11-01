@@ -1,10 +1,9 @@
 # PROJET FINAL : Page Portfolio Ultra-Professionnelle
 
-**Durée : 8 heures**  
+
 **Objectif : Construire une page qui impressionne, étape par étape**  
 **Format : Prompts quasi-complets, vous ajoutez les détails finaux**
 
----
 
 ## RÉSULTAT FINAL
 
