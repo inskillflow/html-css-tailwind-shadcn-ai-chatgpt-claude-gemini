@@ -112,6 +112,272 @@ Créez `portfolio/balises-test.html` et collez :
 </html>
 ```
 
+
+
+
+
+### Explications
+
+### `<!doctype html>`
+
+* **Rôle** : indique au navigateur que le document suit le **standard HTML5**.
+* **Obligatoire en première ligne**. Sans lui, le moteur de rendu peut passer en *quirks mode* → comportement CSS incohérent.
+
+**À retenir**
+
+* Pas de balise fermante.
+* Pas d’attribut.
+* Orthographe exacte `<!doctype html>` (casse indifférente, mais évite `<!DOCTYPE HTML>` pour la cohérence).
+
+
+
+### `<html lang="fr"> ... </html>`
+
+* **Rôle** : racine du document. Tout le contenu (sauf `<!doctype>`) doit être à l’intérieur.
+* **Attribut `lang`** : **accessibilité + SEO**. Informe lecteurs d’écran, correcteurs orthographiques et moteurs de recherche.
+* **Valeurs utiles** : `fr`, `en`, `es`, `ar`, etc. On peut préciser une variante : `fr-CA`, `en-GB`.
+
+**Bonnes pratiques**
+
+* Ne duplique jamais `<html>`.
+* Évite d’ajouter des classes ici (réserve-les aux sections visibles).
+
+
+
+### `<head> ... </head>`
+
+**Rôle** : métadonnées **non visibles** et ressources (titre de l’onglet, encodage, description, CSS/JS, favicon).
+
+#### a) `<meta charset="utf-8">`
+
+* **Encodage** : gère les accents et caractères spéciaux.
+* **Position** : **tout en haut du `<head>`**, idéalement la 1ʳᵉ balise après `<head>` pour éviter les caractères mal lus.
+
+#### b) `<title> ... </title>`
+
+* **Rôle** : Titre de l’onglet + titre cliquable dans les résultats de recherche.
+* **Conseil** : rester clair et court (≈ 50–60 caractères).
+* **Ex.** `Portfolio — IA & Cloud | [Votre Nom]`.
+
+#### c) `<meta name="description" content="...">`
+
+* **Rôle** : extrait affiché sous le lien dans les moteurs de recherche (snippet).
+* **Conseil** : phrase naturelle ≤ 155–160 caractères, mots clés **sans bourrage**.
+
+#### d) `<meta name="viewport" content="width=device-width, initial-scale=1">`
+
+* **Rôle** : responsive mobile. Sans ça, la page “zoome” sur smartphone.
+* **À garder** tel quel dans 99% des cas.
+
+#### e) `<script src="https://cdn.tailwindcss.com"></script>`
+
+* **Rôle** : charge **Tailwind v3 via Play CDN** (aucune installation).
+* **Usage pédagogique** : parfait pour **débuter, prototyper, évaluer**.
+* **Production** : préférez l’installation **npm + purge** pour optimiser la taille CSS (mais on reste en CDN ici, par consigne).
+
+> Astuce : si vous devez configurer Tailwind (thème, couleurs), vous pouvez insérer avant ce script :
+>
+> ```html
+> <script>
+>   tailwind.config = { theme: { extend: {} } }
+> </script>
+> <script src="https://cdn.tailwindcss.com"></script>
+> ```
+
+
+
+### `<body class="antialiased text-slate-800 bg-white"> ... </body>`
+
+* **Rôle** : **contenu visible**.
+* **Classes Tailwind** :
+
+  * `antialiased` : lissage de police.
+  * `text-slate-800` : texte gris foncé lisible.
+  * `bg-white` : fond blanc.
+* **Contenu** : commencez simple (“Contenu à venir...”), puis remplacez par vos sections.
+
+**Pièges fréquents**
+
+* Oublier de fermer `</body>` ou `</html>`.
+* Mettre des éléments visibles (`<h1>`, `<p>`) **dans** le `<head>` (erreur).
+* Oublier `charset` → caractères “�”.
+
+
+
+### Ordre recommandé 
+
+1. `<!doctype html>`
+2. `<html lang="fr">`
+3. `<head>`
+
+   * `<meta charset="utf-8">`
+   * `<title> ... </title>`
+   * `<meta name="description" ...>`
+   * `<meta name="viewport" ...>`
+   * `tailwind.config` (facultatif)
+   * `<script src="https://cdn.tailwindcss.com"></script>`
+4. `</head>`
+5. `<body ...> ... </body>`
+6. `</html>`
+
+
+
+
+
+### QUIZ 1
+
+
+### Q1. Où doit se trouver `<!doctype html>` ?
+
+A. À la fin du fichier
+B. En première ligne du document
+C. Après la balise `<head>`
+D. Juste avant `</html>`
+
+### Q2. Le rôle principal de `<!doctype html>` est de…
+
+A. Charger Tailwind
+B. Indiquer au navigateur d’utiliser le standard HTML5
+C. Définir l’encodage UTF-8
+D. Rendre la page responsive sur mobile
+
+### Q3. Dans `<html lang="fr">`, l’attribut `lang` sert (choix multiples) :
+
+A. À l’accessibilité (lecteurs d’écran)
+B. À la sélection automatique de polices adaptées
+C. À l’auto-détection du fuseau horaire
+D. Au SEO (meilleure indexation linguistique)
+
+### Q4. Où placer **idéalement** `<meta charset="utf-8">` ?
+
+A. N’importe où dans `<body>`
+B. Tout en haut de `<head>`
+C. Après `<title>`
+D. En bas de la page
+
+### Q5. Quel élément **appartient** au `<head>` ?
+
+A. `<h1>`
+B. `<p>`
+C. `<meta name="description" …>`
+D. `<section>`
+
+### Q6. Le meilleur libellé pour `<title>` d’un portfolio court est :
+
+A. `Mon site`
+B. `Portfolio — IA & Cloud | [Votre Nom]`
+C. `Bienvenue sur mon super site web personnel de démonstration`
+D. `Page 1`
+
+### Q7. La meta-description efficace est (choix multiples) :
+
+A. Une phrase naturelle ≤ 160 caractères
+B. Une liste de mots-clés séparés par des virgules
+C. Un paragraphe de 500 caractères
+D. Un résumé clair du contenu de la page
+
+### Q8. Que fait la meta viewport suivante ?
+
+`<meta name="viewport" content="width=device-width, initial-scale=1">`
+A. Empêche le zoom utilisateur
+B. Adapte la largeur au périphérique
+C. Active le mode sombre
+D. Définit le zoom initial à 1
+
+### Q9. Pour **prototyper** rapidement Tailwind sans installation, on utilise :
+
+A. `<link rel="stylesheet" href="tailwind.css">` local
+B. `<script src="https://cdn.tailwindcss.com"></script>`
+C. `npm install tailwindcss` + build
+D. `<style> @tailwind utilities; </style>` seul
+
+### Q10. En production à trafic élevé, la meilleure approche Tailwind est :
+
+A. Play CDN tel quel
+B. Aucune feuille de style
+C. Installation via npm + purge/minification
+D. Tout mettre en inline style
+
+### Q11. Dans `<body class="antialiased text-slate-800 bg-white">`, associe chaque classe à son effet (choix multiples) :
+
+A. `antialiased` → lissage du rendu typographique
+B. `text-slate-800` → couleur de texte gris foncé lisible
+C. `bg-white` → fond blanc
+D. `antialiased` → active le responsive
+
+### Q12. Différence correcte entre `class` et `id` :
+
+A. `class` = réutilisable ; `id` = unique dans la page
+B. `class` = unique ; `id` = réutilisable
+C. Les deux sont toujours uniques
+D. Aucune différence fonctionnelle
+
+### Q13. Quels éléments doivent **obligatoirement** être dans `<body>` (choix multiples) ?
+
+A. Contenu visible (titres, paragraphes)
+B. `<meta charset="utf-8">`
+C. Sections de page (`<main>`, `<section>`)
+D. `<title>`
+
+### Q14. Quel ordre est le plus approprié ?
+
+A. `<body> → <head> → <!doctype html> → </html>`
+B. `<!doctype html> → <html> → <head> → </head> → <body> → </body> → </html>`
+C. `<html> → <!doctype html> → <head> → <body> → </html>`
+D. `<!doctype html> → <head> → <body> → <html>`
+
+### Q15. Quelle affirmation est correcte concernant le **SEO** (choix multiples) ?
+
+A. Le `<title>` influence l’extrait affiché sous le lien
+B. La meta-description peut apparaître dans les résultats
+C. `lang="fr"` peut aider l’indexation linguistique
+D. `antialiased` améliore le ranking
+
+### Q16. Placer un `<h1>` dans le `<head>` :
+
+A. Est valide et recommandé
+B. Est invalide : contenu visible dans `<body>`
+C. N’a aucun effet, le navigateur l’ignore
+D. Est requis pour le responsive
+
+### Q17. Quels risques en l’absence de `<!doctype html>` (choix multiples) ?
+
+A. Passage en *quirks mode*
+B. Rendu CSS potentiellement incohérent
+C. Désactivation de JavaScript
+D. Encodage invalide garanti
+
+### Q18. Exemple valide d’attribut `lang` spécifique :
+
+A. `lang="fr-CA"`
+B. `lang="french"`
+C. `lang="fr_CA"`
+D. `lang="ca-fr"`
+
+### Q19. À propos de la **taille** du CSS avec Play CDN :
+
+A. Elle contient beaucoup de classes inutilisées
+B. Elle est purgée automatiquement au build
+C. Elle est idéale pour optimiser la perf en prod
+D. Elle n’existe pas : Tailwind ne charge rien
+
+### Q20. Quels éléments sont des **métadonnées** de page (choix multiples) ?
+
+A. `<meta name="viewport" …>`
+B. `<meta name="description" …>`
+C. `<h1>`
+D. `<title>`
+
+
+
+
+
+
+
+
+
+
+
 <br/><br/>
 
 ## **PARTIE 2 — Texte & typographie**
