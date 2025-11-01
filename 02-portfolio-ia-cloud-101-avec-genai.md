@@ -20,7 +20,14 @@
 11. [Construction Section 8 : Page Architecture Cloud](#partie-11-page-architecture-cloud)
 12. [Optimisation et validation finale](#partie-12-validation-finale)
 
----
+
+> Références:
+
+-  https://claude.ai/new
+-  https://chatgpt.com/
+-  https://gemini.google.com/app
+-  https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/01-introduction-ia-ml-gen.md
+-  https://github.com/inskillflow/Services-AWS-pour-les-Fondements-de-l-IA-Generative/blob/main/02-pratique-1-introduction-ia-ml-gen.md
 
 ## PARTIE 1 : INTRODUCTION
 
