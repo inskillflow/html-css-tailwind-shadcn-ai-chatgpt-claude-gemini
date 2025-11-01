@@ -208,6 +208,32 @@ Créez `portfolio/balises-test.html` et collez :
 | 20 | Titre **bleu (500)** + **margin-bottom 4**                                          | `<h2 class="________ ________">Section</h2>`                  |
 
 
+### Réponses pratique 1
+
+
+| #  | Description                                      | Code complété                                                 |
+| -- | ------------------------------------------------ | ------------------------------------------------------------- |
+| 1  | Paragraphe **bleu foncé**                        | `<p class="text-blue-800">Texte ici</p>`                      |
+| 2  | Titre **rouge clair (niveau 200)**               | `<h2 class="text-red-200">Titre ici</h2>`                     |
+| 3  | Paragraphe **grand (2xl)** + **texte slate**     | `<p class="text-2xl text-slate-700">Texte ici</p>`            |
+| 4  | Paragraphe **vert moyen (500)** + **semi-gras**  | `<p class="text-green-500 font-semibold">Texte ici</p>`       |
+| 5  | Bloc/bouton avec **fond bleu** + **texte blanc** | `<div class="bg-blue-600 text-white">Bouton</div>`            |
+| 6  | Paragraphe avec **padding 6**                    | `<p class="p-6">Texte ici</p>`                                |
+| 7  | Titre **très grand (3xl)** + **gras**            | `<h1 class="text-3xl font-bold">Mon titre</h1>`               |
+| 8  | Texte **gris clair** (`slate-300`)               | `<p class="text-slate-300">Texte ici</p>`                     |
+| 9  | Texte **centré**                                 | `<p class="text-center">Texte centré</p>`                     |
+| 10 | Div **fond gris très clair** + **padding 4**     | `<div class="bg-slate-100 p-4">Contenu</div>`                 |
+| 11 | Lien **bleu** + **souligné au survol**           | `<a class="text-blue-600 hover:underline" href="#">Lien</a>`  |
+| 12 | Paragraphe **orange (400)** + **taille lg**      | `<p class="text-orange-400 text-lg">Alerte</p>`               |
+| 13 | Petit texte **12px** + **slate-500**             | `<p class="text-xs text-slate-500">Note</p>`                  |
+| 14 | Div **bordure grise** + **arrondis**             | `<div class="border border-slate-200 rounded-lg">Carte</div>` |
+| 15 | Bouton **fond vert (600)** + **px-4** + **py-2** | `<button class="bg-green-600 px-4 py-2">Valider</button>`     |
+| 16 | Texte **aligné à droite**                        | `<p class="text-right">Total</p>`                             |
+| 17 | Paragraphe **violet (500)** + **italic**         | `<p class="text-violet-500 italic">Texte</p>`                 |
+| 18 | Div avec **ombre** + **fond blanc**              | `<div class="bg-white shadow">Card</div>`                     |
+| 19 | Paragraphe **rouge foncé (700)**                 | `<p class="text-red-700">Erreur : ...</p>`                    |
+| 20 | Titre **bleu (500)** + **margin-bottom 4**       | `<h2 class="text-blue-500 mb-4">Section</h2>`                 |
+
 
 
 
