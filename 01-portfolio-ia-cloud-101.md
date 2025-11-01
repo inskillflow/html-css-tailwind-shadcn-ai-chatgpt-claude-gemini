@@ -178,6 +178,43 @@ Créez `portfolio/balises-test.html` et collez :
 </html>
 ```
 
+<br/>
+
+### PRATIQUE 1 
+
+
+
+| #  | Description (ce que je veux)                                                        | Code à compléter                                              |
+| -- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| 1  | Paragraphe **bleu foncé**                                                           | `<p class="________">Texte ici</p>`                           |
+| 2  | Titre **rouge clair (niveau 200)**                                                  | `<h2 class="________">Titre ici</h2>`                         |
+| 3  | Paragraphe **grand (2xl)** + **texte slate**                                        | `<p class="________ ________">Texte ici</p>`                  |
+| 4  | Paragraphe **vert moyen (500)** + **semi-gras**                                     | `<p class="________ ________">Texte ici</p>`                  |
+| 5  | Bloc/bouton avec **fond bleu** + **texte blanc**                                    | `<div class="________ ________">Bouton</div>`                 |
+| 6  | Paragraphe avec **padding 6**                                                       | `<p class="________">Texte ici</p>`                           |
+| 7  | Titre **très grand** (3xl) + **gras**                                               | `<h1 class="________ ________">Mon titre</h1>`                |
+| 8  | Texte **gris clair** (`slate-300`)                                                  | `<p class="________">Texte ici</p>`                           |
+| 9  | Texte **centré**                                                                    | `<p class="________">Texte centré</p>`                        |
+| 10 | Div avec **fond gris très clair** (`slate-100`) + **padding 4**                     | `<div class="________ ________">Contenu</div>`                |
+| 11 | Lien en **bleu** + **souligné au survol**                                           | `<a class="________ hover:________" href="#">Lien</a>`        |
+| 12 | Paragraphe **orange (400)** + **taille lg**                                         | `<p class="________ ________">Alerte</p>`                     |
+| 13 | Petit texte **12px** (`text-xs`) en **couleur muted (slate-500)**                   | `<p class="________ ________">Note</p>`                       |
+| 14 | Div avec **bordure grise** + **arrondis**                                           | `<div class="________ ________">Carte</div>`                  |
+| 15 | Bouton avec **fond vert (600)** + **padding horizontal 4** + **padding vertical 2** | `<button class="________ ________ ________">Valider</button>` |
+| 16 | Texte **aligné à droite**                                                           | `<p class="________">Total</p>`                               |
+| 17 | Paragraphe **violet (500)** + **italic**                                            | `<p class="________ ________">Texte</p>`                      |
+| 18 | Div avec **ombre** + **fond blanc**                                                 | `<div class="________ ________">Card</div>`                   |
+| 19 | Paragraphe **rouge foncé (700)** pour erreur                                        | `<p class="________">Erreur : ...</p>`                        |
+| 20 | Titre **bleu (500)** + **margin-bottom 4**                                          | `<h2 class="________ ________">Section</h2>`                  |
+
+
+
+
+
+
+
+
+
 <br/><br/>
 
 ## **PARTIE 1 — Squelette HTML : ligne par ligne**
