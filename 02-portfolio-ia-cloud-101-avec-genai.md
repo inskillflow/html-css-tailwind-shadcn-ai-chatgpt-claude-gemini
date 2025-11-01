@@ -1,10 +1,9 @@
 # COURS-PROJET : Portfolio Web avec IA Générative
 
-**Durée totale : 20 heures**  
 **Format : Construction progressive d'un portfolio 3 pages**  
 **Technologies : HTML5, Tailwind v3, IA générative (ChatGPT/Claude)**
 
----
+
 
 ## TABLE DES MATIÈRES
 
