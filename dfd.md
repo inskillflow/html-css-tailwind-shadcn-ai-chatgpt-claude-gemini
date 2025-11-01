@@ -1,21 +1,41 @@
+
 ## **Table des matières**
 
-<span id="table-des-matières"></span>
+<span id="toc"></span>
+
+* [PARTIE 0 — Principes & lecture d’une balise](#partie-0--principes--lecture-dune-balise)
+* [PARTIE 1 — Squelette HTML : ligne par ligne](#partie-1--squelette-html--ligne-par-ligne)
+* [PARTIE 2 — Texte & typographie](#partie-2--texte--typographie)
+* [PARTIE 3 — Structure sémantique](#partie-3--structure-sémantique)
+* [PARTIE 4 — Liens & listes](#partie-4--liens--listes)
+* [PARTIE 5 — Médias : images accessibles](#partie-5--médias--images-accessibles)
+* [PARTIE 6 — Formulaires](#partie-6--formulaires)
+* [PARTIE 7 — Tailwind v3 : classes clés](#partie-7--tailwind-v3--classes-clés)
+* [PARTIE 8 — Construire `index.html` (corps complet)](#partie-8--construire-indexhtml-corps-complet)
+* [PARTIE 9 — `ai-demos.html` (modale simple)](#partie-9--ai-demoshtml-modale-simple)
+* [PARTIE 10 — `cloud-architecture.html`](#partie-10--cloud-architecturehtml)
+* [PARTIE 11 — Accessibilité & bonnes pratiques](#partie-11--accessibilité--bonnes-pratiques)
+* [PARTIE 12 — Git (local uniquement) — script d’examen](#partie-12--git-local-uniquement--script-dexamen)
+* [FICHIERS À REMETTRE](#fichiers-à-remettre)
+* [BARÈME (100 points)](#barème-100-points)
+* [Résumé pédagogique : `font-semibold`](#résumé-pédagogique--où-mettre-font-semibold-)
 
 <br/><br/>
 
-## **EXAMEN–COURS — HTML + Tailwind v3 pour Portfolio IA & Cloud (débutant absolu)**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **EXAMEN–COURS — HTML + Tailwind v3 pour Portfolio IA & Cloud (débutant absolu)**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Objectif général.** Comprendre **chaque balise** utilisée dans un vrai site et livrer un **portfolio multi-pages**.
 **Technos imposées :** HTML5 + Tailwind v3 (Play CDN).
 **Livrables :** `portfolio/` complet + `README.md` + captures d’écran (mobile & desktop).
 **Évaluation :** voir barème en fin de document.
 
-
-
 <br/><br/>
 
-## **PARTIE 0 — Principes & lecture d’une balise**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 0 — Principes & lecture d’une balise**
+
+[Retour 🔙 à la table des matières](#toc)
 
 ### 0.1 — Qu’est-ce qu’une balise ?
 
@@ -58,11 +78,11 @@ Créez `portfolio/balises-test.html` et collez :
 </html>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 1 — Squelette HTML : ligne par ligne**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 1 — Squelette HTML : ligne par ligne**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **`<!doctype html>`** : signale HTML5 (toujours en 1ʳᵉ ligne).
 **`<html lang="fr">`** : racine + langue.
@@ -87,11 +107,11 @@ Créez `portfolio/balises-test.html` et collez :
 </html>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 2 — Texte & typographie**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 2 — Texte & typographie**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Titres `h1..h6`** : un seul `h1` par page. Tailwind : `text-2xl md:text-3xl`, `font-semibold`.
 
@@ -124,10 +144,11 @@ Créez `portfolio/balises-test.html` et collez :
 <p class="mt-3 text-slate-700">Je construis des projets IA (LLM, RAG) et des déploiements Cloud.</p>
 ```
 
-
 <br/><br/>
 
-## **PARTIE 3 — Structure sémantique**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 3 — Structure sémantique**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Balises :** `header`, `nav`, `main`, `section`, `article`, `aside`, `footer`, `div`.
 **Tailwind utiles :** `mx-auto max-w-6xl px-4`, `py-12`, `border`, `rounded-lg`, `shadow-sm`.
@@ -178,11 +199,11 @@ Créez `portfolio/balises-test.html` et collez :
 </script>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 4 — Liens & listes**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 4 — Liens & listes**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Lien `a`** : `href` obligatoire, `target="_blank"` + `rel="noopener"` si nouvel onglet.
 **Listes** : `ul`/`ol` + `li`.
@@ -197,10 +218,11 @@ Créez `portfolio/balises-test.html` et collez :
 </ul>
 ```
 
-
 <br/><br/>
 
-## **PARTIE 5 — Médias : images accessibles**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 5 — Médias : images accessibles**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **`img`** : `src`, **`alt`** (toujours), Tailwind : `w-..`, `h-..`, `object-cover`, `rounded-lg`.
 **`figure`/`figcaption`** : image + légende.
@@ -217,11 +239,11 @@ Créez `portfolio/balises-test.html` et collez :
 </article>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 6 — Formulaires**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 6 — Formulaires**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **`form`** : `action`, `method`. Ici, on **simule** (pas d’envoi).
 **`label`/`input`/`textarea`/`select`/`option`/`button`** : `label[for]` lié à `id`. `required` pour obligatoires.
@@ -246,22 +268,22 @@ Créez `portfolio/balises-test.html` et collez :
 </section>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 7 — Tailwind v3 : classes clés**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 7 — Tailwind v3 : classes clés**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **`font-semibold`** : semi-gras (titres, CTA, labels, titres de cards).
 **Tailles/couleurs/espaces** : `text-2xl`, `md:text-3xl`, `text-slate-700`, `bg-white`, `px-5 py-3`, `mt-6`, `gap-6`.
 **Layout** : `flex items-center justify-between`, `grid sm:grid-cols-2 lg:grid-cols-3`.
 **Variants** : `hover:bg-blue-500`, `md:`, `hidden md:flex`.
 
-
-
 <br/><br/>
 
-## **PARTIE 8 — Construire `index.html` (corps complet)**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 8 — Construire `index.html` (corps complet)**
+
+[Retour 🔙 à la table des matières](#toc)
 
 Collez ce `<body>` complet :
 
@@ -357,7 +379,9 @@ Collez ce `<body>` complet :
 
 <br/><br/>
 
-## **PARTIE 9 — `ai-demos.html` (modale simple)**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 9 — `ai-demos.html` (modale simple)**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Nouvelles balises :** `button` (ouvre/ferme modale). Modale = overlay + boîte centrale.
 
@@ -419,11 +443,11 @@ Collez ce `<body>` complet :
 </html>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 10 — `cloud-architecture.html`**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 10 — `cloud-architecture.html`**
+
+[Retour 🔙 à la table des matières](#toc)
 
 **Balises utilisées** : `section`, `ul`, `li`, titres, paragraphes.
 
@@ -475,11 +499,11 @@ Collez ce `<body>` complet :
 </html>
 ```
 
-
-
 <br/><br/>
 
-## **PARTIE 11 — Accessibilité & bonnes pratiques**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 11 — Accessibilité & bonnes pratiques**
+
+[Retour 🔙 à la table des matières](#toc)
 
 * `alt` sur toutes les images
 * Une seule hiérarchie de titres (1 `h1` par page)
@@ -487,22 +511,22 @@ Collez ce `<body>` complet :
 * Liens descriptifs (“Voir mes projets”)
 * Focus clavier par défaut sur les boutons/inputs
 
-
-
 <br/><br/>
 
-## **PARTIE 12 — Git (local uniquement) — script d’examen**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **PARTIE 12 — Git (local uniquement) — script d’examen**
+
+[Retour 🔙 à la table des matières](#toc)
 
 Conservez l’énoncé **Commandes 1→79** (branches v1→v5, fusions successives, restauration, suppression/récupération).
 Outils utiles : `mkdir`, `cd`, `git init`, `git add`, `git commit -m`, `git switch -c`, `git merge`, `git branch -d`,
 `git restore`, `git checkout <commit> -- fichier`, `git reflog`, `git log --oneline --graph --decorate --all`.
 Chaque commande recopiée dans **`git_commands.txt`**.
 
-
-
 <br/><br/>
 
-## **FICHIERS À REMETTRE**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **FICHIERS À REMETTRE**
+
+[Retour 🔙 à la table des matières](#toc)
 
 * `portfolio/` : `index.html`, `ai-demos.html`, `cloud-architecture.html`, `assets/` (+ `screenshot-mobile.png`, `screenshot-desktop.png`), `README.md`
 * UML (PDF/PNG) de la PARTIE 1
@@ -510,11 +534,11 @@ Chaque commande recopiée dans **`git_commands.txt`**.
 * `git_commands.txt` complété
 * `analyse.txt` (réponses aux 5 questions Git)
 
-
-
 <br/><br/>
 
-## **BARÈME (100 points)**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **BARÈME (100 points)**
+
+[Retour 🔙 à la table des matières](#toc)
 
 * Balises & application (titres, texte, médias, listes) — **20 pts**
 * Tailwind v3 (dont `font-semibold` aux bons endroits) — **20 pts**
@@ -525,11 +549,11 @@ Chaque commande recopiée dans **`git_commands.txt`**.
 * UML (classes, attributs, multiplicités) — **5 pts**
 * Git local (script + restauration) — **10 pts**
 
-
-
 <br/><br/>
 
-## **Résumé pédagogique : où mettre `font-semibold` ?**  [Retour 🔙 à la table des matières](#table-des-matières)
+## **Résumé pédagogique : où mettre `font-semibold` ?**
+
+[Retour 🔙 à la table des matières](#toc)
 
 * Titres (`h1`, `h2`, `h3`)
 * Liens principaux du header
