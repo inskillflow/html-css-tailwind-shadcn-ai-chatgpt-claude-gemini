@@ -346,3 +346,102 @@ Pour “simuler” les réglages :
 * **Temp haute (créativité)** → ajoute : *“développe, compare, nuances, exemples concrets et contre-exemples.”*
 * **Longueur** → impose **bornes** (“en 25–40 mots”, “en 150–200 mots”, “≈500 mots”).
 
+
+
+<br/>
+
+# Annexe 3 - Démonstration guidée (même question, plusieurs réponses)
+
+
+L'objectif est de vous montrer qu’une même question
+
+> 1. **Balise sémantique (ex. `<header>`)** : …
+>    peut produire **des réponses variées** selon les consignes (style “température” et longueur).
+
+# 1) Démonstration guidée (4 variantes canoniques)
+
+Donne la **même question**, mais change la consigne. Demande aux étudiants : « Copiez/collez, comparez la forme et le contenu. »
+
+| Variante             | Objectif                             | Prompt à donner tel quel                                                                                                                                                            | Extrait de réponse attendue (exemple)                                                                                                                                                                                         |
+| -------------------- | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A — Directe & courte | Précision, 1 phrase                  | **« Une seule phrase de 25–40 mots, définition factuelle d’une balise sémantique en HTML en citant `<header>`, sans code, sans liste, vocabulaire simple. »**                       | *Une balise sémantique, comme `<header>`, indique la fonction d’une section (en-tête) pour améliorer la structure du document, l’accessibilité et la compréhension par les moteurs de recherche, sans effet de style visuel.* |
+| B — Directe & longue | Définition détaillée, ton académique | **« En 120–160 mots : définition précise d’une balise sémantique avec l’exemple `<header>` ; pas de listes, pas de digressions ; objectifs : structure, accessibilité, SEO. »**     | *… Contrairement à `<div>`, elle porte du sens exploitable par lecteurs d’écran ; `<header>` marque l’en-tête d’une page ou section (titre, logo, intro nav), ce qui renforce accessibilité et interprétation SEO…*           |
+| C — Élargie & courte | Nuance/contre-ex., 1 phrase          | **« En 30–50 mots, explique une balise sémantique en prenant `<header>` ; ajoute une nuance (différence avec `<div>` ou mise en garde). Une seule phrase. »**                       | *… utile si on l’emploie à bon escient, et non pour de la mise en forme pure, rôle du CSS…*                                                                                                                                   |
+| D — Élargie & longue | Comparaison + mini-code              | **« 150–200 mots : explique la notion avec `<header>`, compare à `<div>`, ajoute 1 mini-exemple HTML compact, mentionne accessibilité/SEO et 1 mauvaise pratique ; sans listes. »** | *…* `html<br><header><h1>Mon Site</h1><nav>…</nav></header>` *… mauvaise pratique : multiplier `<header>` sans logique structurelle…*                                                                                         |
+
+> But pédagogique : visualiser comment **la consigne** (basse vs haute “température” de style, court vs long) impacte **le niveau de détail**, **les comparaisons**, **les exemples** et **la forme** (phrase unique vs paragraphe).
+
+
+
+# 2) Atelier “échelle de contraintes”
+
+Même question, mais tu **augmentes progressivement** les contraintes :
+
+1. **Niveau 1 (20 mots max)** : « Définis “balise sémantique” avec l’exemple `<header>` en **≤ 20 mots**, sans code. »
+2. **Niveau 2 (une phrase + nuance)** : « Une phrase **30–45 mots**, ajoute une nuance vs `<div>`. »
+3. **Niveau 3 (100–120 mots)** : « Définition + accessibilité + SEO, **100–120 mots**, sans liste. »
+4. **Niveau 4 (avec mini-code)** : « Même contenu + **mini-exemple HTML** compact, **150–180 mots**. »
+
+> Devoir : les étudiants collent leurs 4 sorties et notent ce qui **change** (densité, précision, structure, exemples, risques d’erreurs).
+
+
+
+# 3) A/B Testing en binôme
+
+* **A** demande : « Une phrase de 25–40 mots, factuelle, sans exemple supplémentaire. »
+* **B** demande : « 150–200 mots, développe, compare à `<div>`, ajoute un contre-exemple. »
+* Ils **échangent** et cochent ce qui diffère : longueur, structure, vocabulaire, présence de nuances/contre-exemples, code oui/non.
+
+
+
+# 4) Rôles ciblés (persona prompting)
+
+Donne 3 rôles pour la **même question** :
+
+1. **Lecteur d’écran (accessibilité)** : « Réponds en 60–80 mots, focus ARIA/repérage structurel. »
+2. **SEO** : « 60–80 mots, impact sur balisage sémantique et compréhension par moteurs. »
+3. **Designer CSS** : « 60–80 mots, séparer sens (HTML) et présentation (CSS). »
+
+> Comparez l’**angle** et les **exemples** choisis selon le rôle.
+
+
+
+# 5) Contre-exemple guidé
+
+* Prompt : « En 60–80 mots, donne **1 bon usage** de `<header>` et **1 contre-exemple** où `<header>` est mal employé. Sans liste. »
+* Objectif : montrer que la **même notion** peut être expliquée avec une **structure dialectique** (pour/contre).
+
+
+
+# 6) Tableau “paramètres de style”
+
+*(À afficher avant l’activité ; ce ne sont pas des réglages techniques du chat, mais des **consignes de style** qui simulent température/longueur.)*
+
+| Intention pédagogique | Formulation de consigne (à copier)                                                 | Effet attendu                           |
+| --------------------- | ---------------------------------------------------------------------------------- | --------------------------------------- |
+| Précision minimale    | « Une seule phrase, 25–40 mots, factuelle, sans liste ni code. »                   | Sortie compacte, peu d’exemples         |
+| Nuances               | « Développe, compare, ajoute nuances, exemples et contre-exemples. 150–200 mots. » | Sortie riche, comparaisons, cas limites |
+| Format strict         | « Une seule phrase. Pas de liste. Pas de code. »                                   | Respect de forme                        |
+| Exemple imposé        | « Cite `<header>` explicitement. »                                                 | Ancrage concret                         |
+| Mise en garde         | « Ajoute une mauvaise pratique fréquente. »                                        | Pensée critique                         |
+| Contrôle longueur     | « En 100–120 mots (ne dépasse pas 120). »                                          | Stabilité de taille                     |
+
+
+
+# 7) Mini-rubrique de correction (rapide)
+
+* **Exactitude (4 pts)** : définition correcte, rôle de sens vs style.
+* **Pertinence (3 pts)** : `<header>` bien positionné (page/section), mention accessibilité/SEO au bon endroit.
+* **Concision/Format (2 pts)** : respecte phrase unique / bornes de mots / pas de liste si demandé.
+* **Nuance (1 pt)** : comparaison utile (`<div>`, mauvaise pratique).
+
+
+
+# 8) Fiche “prête à coller” pour les apprenants
+> **Consigne** (choisissez 1 des 4) :
+> A) Une phrase 25–40 mots, factuelle, avec `<header>`, sans code/liste.
+> B) 120–160 mots, définition précise + accessibilité/SEO, sans liste.
+> C) Une phrase 30–50 mots, avec nuance vs `<div>`.
+> D) 150–200 mots, avec comparaison, mini-code, et 1 mauvaise pratique.
+> **Après** : comparez les sorties A/B/C/D et surlignez ce qui change (longueur, densité, exemples, ton, structure).
+
