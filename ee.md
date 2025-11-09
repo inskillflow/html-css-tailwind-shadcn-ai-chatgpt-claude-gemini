@@ -1,6 +1,3 @@
-Parfait — voici une **version courte, simple et notée** du même style, mais 100% centrée sur **PORTFOLIO HTML + Tailwind**. Copie/colle tel quel.
-
----
 
 # Pratique 1 — Portfolio HTML + Tailwind (débutant)
 
@@ -215,6 +212,3 @@ Cochez la/les bonne(s) réponse(s).
 **4.3** `hidden md:block`
 **4.4** `target="_blank" rel="noopener"`
 
----
-
-Si tu veux, je te le transforme en **doc “gpt15” Thinkific** ou en **`index.html` + `style` minimal** (même contenu, prêt à publier).
