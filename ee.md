@@ -4,9 +4,9 @@
 *Fichier : `02-pratique-portfolio-html-tailwind.md`*
 **Durée totale : 2 h** — **Barème : 100 points**
 
----
 
-## PARTIE 1 — COMPRÉHENSION (20 points)
+
+# PARTIE 1 — COMPRÉHENSION (20 points)
 
 ### 1.1 Définitions (6 pts)
 
@@ -211,4 +211,58 @@ Cochez la/les bonne(s) réponse(s).
 **4.2** `max-w-6xl mx-auto`
 **4.3** `hidden md:block`
 **4.4** `target="_blank" rel="noopener"`
+
+
+
+
+# Annexe 1 
+
+
+
+
+# 1) Paramètres (API) — mémo rapide
+
+| Paramètre           | Ce que ça contrôle                                               |  Plage utile |                        Valeur sûre (générale) | Risques si trop haut             |
+| ------------------- | ---------------------------------------------------------------- | -----------: | --------------------------------------------: | -------------------------------- |
+| `temperature`       | Variabilité/créativité du texte                                  |      0.0–1.2 | **0.2–0.3** (factuel) / **0.8–0.9** (créatif) | Hors-sujet, verbiage             |
+| `top_p`             | Troncature par probabilité cumulée (alternative à `temperature`) |      0.5–1.0 |            **1.0** si tu règles `temperature` | Réponses erratiques si trop bas  |
+| `max_tokens`        | Longueur **max** de la sortie                                    | selon besoin |       **80–120** (court) / **180–300** (long) | Coupures en fin de réponse       |
+| `frequency_penalty` | Pénalise la répétition de tokens                                 |      0.0–1.0 |                                   **0.0–0.2** | Style haché, pertes de précision |
+| `presence_penalty`  | Encourage nouvelles idées/sujets                                 |      0.0–1.0 |                                   **0.0–0.2** | Digressions, hors sujet          |
+| `response_format`   | Structure (texte, JSON)                                          |            — |                                         texte | JSON invalide si mal spécifié    |
+| `stop`              | Séquence(s) d’arrêt                                              |            — |                                             — | Troncature involontaire          |
+
+> En **chat normal** (sans API), tu ne règles pas ces nombres, mais tu peux **mimer** l’effet via des consignes de **style** (“réponse factuelle…”, “développe, compare…”) et en **imposant la longueur** (“25–40 mots”, “150–200 mots”).
+
+
+# 2) Préréglages prêts à copier (API)
+
+| Objectif              | `temperature` | `top_p` | `max_tokens` | `frequency_penalty` | `presence_penalty` | Style à indiquer dans le prompt                                       |
+| --------------------- | ------------: | ------: | -----------: | ------------------: | -----------------: | --------------------------------------------------------------------- |
+| **Direct & court**    |   **0.1–0.2** |     1.0 |       **80** |                 0.0 |                0.0 | “**Une phrase, 25–40 mots, factuel, sans liste ni code.**”            |
+| **Direct & long**     |   **0.2–0.3** |     1.0 |  **160–220** |                 0.0 |                0.0 | “**120–160 mots, ton académique, sans liste.**”                       |
+| **Élargi & court**    |       **0.8** |     1.0 |  **100–140** |                 0.1 |                0.1 | “**30–50 mots, ajoute une nuance/contre-exemple, 1 phrase.**”         |
+| **Élargi & long**     |       **0.9** |     1.0 |  **220–320** |             0.1–0.2 |            0.1–0.2 | “**150–200 mots, compare, exemples + anti-pattern, mini-code.**”      |
+| **Code-only**         |       **0.1** |     1.0 |   selon bloc |                 0.0 |                0.0 | “**Réponds uniquement par le code complété, aucun commentaire.**”     |
+| **QCM télégraphique** |       **0.1** |     1.0 |    **60–90** |                 0.0 |                0.0 | “**Réponses seulement, format court ‘1)… 2)…’, sans justification.**” |
+
+
+
+# 3) Équivalents “sans API” (consignes de style à coller)
+
+| Cible              | À écrire dans le prompt (équiv. réglages)                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| **Direct & court** | “**Style température ≈ 0.1** : réponse **factuelle**, **une seule phrase (25–40 mots)**, **sans liste**, **sans code**.”  |
+| **Direct & long**  | “**Temp ≈ 0.2** : **120–160 mots**, **ton académique**, **pas de liste**, **pas de digression**.”                         |
+| **Élargi & court** | “**Temp ≈ 0.9** : **30–50 mots**, **une nuance** (comparaison/avertissement), **une seule phrase**.”                      |
+| **Élargi & long**  | “**Temp ≈ 0.9** : **150–200 mots**, **compare**, **exemples + contre-exemples**, **mini-code** autorisé, **sans puces**.” |
+| **Code-only**      | “**Réponds uniquement par le code**, **aucun commentaire ni texte**.”                                                     |
+
+
+
+# 4) Mini-exemples (pour ta Q1.1 “balise sémantique `<header>`”)
+
+* **Direct & court (≈0.1)** : “Une balise sémantique HTML, comme `<header>`, indique la fonction d’une zone (en-tête) pour améliorer structure, accessibilité et interprétation par les moteurs de recherche, sans imposer de style par défaut.”
+* **Élargi & long (≈0.9)** : paragraphe 150–200 mots **avec** comparaison à `<div>`, mini-code `<header>...</header>`, et **anti-pattern** (ne pas l’utiliser pour la mise en page seule).
+
 
