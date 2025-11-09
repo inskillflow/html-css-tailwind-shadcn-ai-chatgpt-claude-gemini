@@ -266,3 +266,83 @@ Cochez la/les bonne(s) réponse(s).
 * **Élargi & long (≈0.9)** : paragraphe 150–200 mots **avec** comparaison à `<div>`, mini-code `<header>...</header>`, et **anti-pattern** (ne pas l’utiliser pour la mise en page seule).
 
 
+<br/>
+
+# Annexe 2 - Comment ça fonctionne par défaut
+
+
+
+* **Dans l’app ChatGPT** (sans API), tu **ne règles pas** `temperature`, `top_p`, `max_tokens`, etc. Ils ont des **valeurs par défaut**.
+* Quand tu écris *“sois concis, précis, le plus court possible”*, tu **n’changes pas** ces nombres : tu **influences le style** et la **longueur désirée**.
+* Si tu demandes *“500 mots”*, le modèle **essaiera** d’atteindre ~500 mots **si** sa limite de sortie le permet (sinon il s’arrête avant).
+
+
+
+## Ce qui se passe “sous le capot”
+
+* **Température** : reste à la valeur par défaut du chat. Dire “sois précis” **n’abaisse pas** la vraie température, mais pousse le modèle à **répondre de façon plus déterministe**.
+* **Max tokens** (longueur max) : dans le chat, c’est **fixé par le modèle**. Ta consigne “500 mots” est une **intention** ; le modèle s’y conforme **tant que** la limite n’est pas atteinte.
+* **Top-p / pénalités** : non modifiées en chat. Tes consignes peuvent seulement **orchestrer** le style, pas les nombres.
+
+
+
+## Mapping pratique (ce que tu écris → ce que ça implique)
+
+| Ce que tu écris dans le prompt                                 | Effet observé (chat normal)        | Réglage **API** équivalent (si un jour tu l’utilises)      |
+| -------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------- |
+| “**Sois concis** / **réponse courte**”                         | Le modèle vise 1–3 phrases         | `temperature: 0.2`, `max_tokens: 80–120`                   |
+| “**Sois précis / factuel**”                                    | Style plus direct, peu d’exemples  | `temperature: 0.1–0.3`                                     |
+| “**Le plus court possible**”                                   | Tente une phrase minimale          | `max_tokens: 40–80`, `temperature: 0.1–0.2`                |
+| “**Donne 500 mots**”                                           | Tente ~500 mots (si limite OK)     | `max_tokens: 700–900` (≈ 500 mots), `temperature: 0.3–0.6` |
+| “**Développe, compare, nuances, exemples et contre-exemples**” | Réponse plus longue, créative      | `temperature: 0.8–0.9`, `max_tokens: 220–400`              |
+| “**Uniquement le code** / **sans liste** / **une phrase**”     | Forme stricte respectée            | `response_format: "text"`, + consigne système stricte      |
+| “**En 25–40 mots**”                                            | Le modèle compte approximativement | `max_tokens: 60–80` (marge de sécurité)                    |
+
+> Règle d’approximation : **1 mot ≈ 1.3–1.6 tokens**. Donc **500 mots ≈ 700–800 tokens** (prévois `max_tokens` ≥ 800 côté API).
+
+
+
+## Deux exemples concrets (ta situation)
+
+### 1) “Définitions — Balise sémantique — sois concis, précis, le plus court possible”
+
+* **Paramètres réels en chat** : par défaut (tu ne les vois pas).
+* **Effet attendu** : 1 phrase, définition sèche, sans exemples inutiles.
+* **Si c’était en API** :
+
+  ```json
+  {
+    "temperature": 0.2,
+    "max_tokens": 80,
+    "messages": [
+      {"role":"system","content":"Réponds factuellement et en une seule phrase."},
+      {"role":"user","content":"Définis une balise sémantique en HTML (ex: <header>) en une phrase très courte, sans liste ni code."}
+    ]
+  }
+  ```
+
+### 2) “Réponse de **500 mots**, sois le plus long possible”
+
+* **Paramètres réels en chat** : par défaut ; la sortie sera longue **jusqu’à la limite** du modèle.
+* **Si c’était en API** :
+
+  ```json
+  {
+    "temperature": 0.6,
+    "max_tokens": 900,
+    "messages": [
+      {"role":"system","content":"Style clair, pédagogique, détaillé."},
+      {"role":"user","content":"Écris ~500 mots sur les balises sémantiques HTML, centrées sur <header>, avec comparaison à <div> et implications accessibilité/SEO."}
+    ]
+  }
+  ```
+
+
+## Astuce infaillible sans API
+
+Pour “simuler” les réglages :
+
+* **Temp basse (précision)** → ajoute : *“réponse factuelle, une phrase, sans liste, vocabulaire simple.”*
+* **Temp haute (créativité)** → ajoute : *“développe, compare, nuances, exemples concrets et contre-exemples.”*
+* **Longueur** → impose **bornes** (“en 25–40 mots”, “en 150–200 mots”, “≈500 mots”).
+
