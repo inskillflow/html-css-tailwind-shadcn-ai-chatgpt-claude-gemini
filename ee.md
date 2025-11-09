@@ -513,3 +513,117 @@ curl https://api.openai.com/v1/chat/completions \
 * **max_tokens ~70** → suffit pour **25–40 mots** (≈ 50–65 tokens).
 * En **chat**, répète toujours la contrainte **“25–40 mots, une seule phrase”** pour simuler `max_tokens`.
 
+
+<br/>
+
+# Annexe 5 - app Streamlit qui teste un même prompt avec plusieurs réglages (temperature, max_tokens, top_p, etc.) et appelle l’API OpenAI
+
+
+<img width="965" height="615" alt="image" src="https://github.com/user-attachments/assets/fc900db2-fbde-4751-a2a0-65532428b062" />
+
+
+### Prompt pour VSCODE — App Streamlit “Prompt Parameter Tester”
+
+**Objectif**
+Crée une petite application **Streamlit** qui envoie un **même prompt** à l’API **OpenAI Chat Completions** en **plusieurs jeux de paramètres** (temperature, max_tokens, top_p, frequency_penalty, presence_penalty) et affiche les réponses côte-à-côte pour comparaison.
+
+**Contraintes & Tech**
+
+* Python 3.10+
+* Streamlit
+* requests (appel HTTP à l’API OpenAI)
+* Clé lue depuis `OPENAI_API_KEY` (champ de saisie + variable d’environnement)
+* Aucune dépendance exotique
+* Code propre, commenté, prêt à exécuter
+
+**Livrables attendus**
+
+1. `streamlit_semantic_tag_tester.py` (application principale)
+2. `requirements.txt` (ex.: `streamlit==1.*`, `requests==2.*`)
+3. `.env.example` (contient `OPENAI_API_KEY=sk-...` vide)
+4. `README.md` clair (installation, lancement, capture d’écran)
+
+**Fonctionnalités obligatoires**
+
+* Titre : “Prompt Parameter Tester — Balise sémantique `<header>` (Exemple)”
+* Saisie **optionnelle** de la clé API (masquée) qui écrase `OPENAI_API_KEY` si fournie
+* Sélecteur de **modèle** (liste : `gpt-5`, `gpt-4.1`, `gpt-4o`, `gpt-4o-mini`) — avec note “si non dispo, choisir un autre”
+* Zone de texte pour le **prompt de base** (préremplie)
+  Valeur par défaut :
+  `Une phrase de 25–40 mots, factuelle et précise, définissant une balise sémantique en HTML avec l’exemple <header>, sans code, sans liste, vocabulaire simple.`
+* Tableau des **presets** A→F affiché avant exécution :
+
+| Test              | temperature | max_tokens | top_p | frequency_penalty | presence_penalty | But                           |
+| ----------------- | ----------- | ---------- | ----- | ----------------- | ---------------- | ----------------------------- |
+| A — factuel court | 0.1         | 80         | 1.0   | 0.0               | 0.0              | Très factuel, concis          |
+| B — factuel long  | 0.1         | 220        | 1.0   | 0.0               | 0.0              | Factuel, plus long            |
+| C — nuancé bref   | 0.7         | 120        | 1.0   | 0.0               | 0.0              | Équilibré, un peu nuancé      |
+| D — créatif court | 0.9         | 80         | 1.0   | 0.0               | 0.0              | Créatif mais court            |
+| E — créatif long  | 0.9         | 220        | 1.0   | 0.0               | 0.0              | Créatif, développé            |
+| F — créatif varié | 0.9         | 220        | 0.8   | 0.2               | 0.2              | Moins répétitif, plus d’idées |
+
+* Multisélection des presets à exécuter (par défaut A,B,C)
+* **Bouton “Lancer”** qui:
+
+  * Envoie une requête par preset à `POST https://api.openai.com/v1/chat/completions`
+  * Payload type :
+
+    ```json
+    {
+      "model": "<model>",
+      "temperature": <value>,
+      "max_tokens": <value>,
+      "top_p": <value>,
+      "frequency_penalty": <value>,
+      "presence_penalty": <value>,
+      "messages": [
+        {"role":"system","content":"Tu es un assistant pédagogique concis et rigoureux."},
+        {"role":"user","content":"<prompt saisi par l’utilisateur>"}
+      ]
+    }
+    ```
+  * Gère les erreurs HTTP proprement et les affiche
+  * Récupère le `content` et, si présent, `usage.total_tokens`
+* Restitution **en tableau** : Test, paramètres, But, Tokens(approx), **Réponse**
+* **Panneau “Paramètres personnalisés (facultatif)”** avec sliders/inputs pour ajouter un **set Custom** aux tests
+* **Infos sécurité**: ne jamais logger la clé; champ masqué; note “utilisez `.env` ou le champ”
+
+**README.md minimal**
+
+* Installation :
+
+  ```bash
+  python -m venv .venv && source .venv/bin/activate  # (ou .venv\Scripts\activate sous Windows)
+  pip install -r requirements.txt
+  cp .env.example .env  # puis remplir OPENAI_API_KEY
+  ```
+* Lancement :
+
+  ```bash
+  streamlit run streamlit_semantic_tag_tester.py
+  ```
+* Utilisation : saisir/valider l’API key si nécessaire, choisir le modèle, garder le **même prompt**, cocher A–F, cliquer **Lancer**.
+* Astuce : comparer les sorties **à prompt identique** pour sentir l’effet réel des paramètres.
+
+**Qualité & UX**
+
+* `st.set_page_config(layout="wide")`
+* Colonnes pour une mise en page aérée
+* `st.info()`/`st.warning()` aux bons endroits
+* Code commenté, petites fonctions pures (ex. `call_openai()`)
+
+**Bonus (si rapide)**
+
+* Bouton “Copier la réponse” par ligne (utilise `st.code` ou `st.text_area` en lecture seule)
+* Export CSV des résultats
+
+**Critères d’acceptation**
+
+* L’app se lance sans erreur, appelle l’API avec les presets, et affiche les réponses.
+* La clé peut venir de l’environnement ou du champ Streamlit.
+* En changeant **uniquement** les paramètres A–F (le prompt restant identique), on observe des variations nettes dans le style/longueur.
+
+
+
+👉 Génère le dépôt avec ces 4 fichiers, code complet et prêt à exécuter.
+
