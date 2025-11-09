@@ -627,3 +627,187 @@ Crée une petite application **Streamlit** qui envoie un **même prompt** à l�
 
 👉 Génère le dépôt avec ces 4 fichiers, code complet et prêt à exécuter.
 
+
+
+<br/>
+
+# Annexe 6 - Version playground
+
+
+
+
+Voici la **correction “version API/Playground”** pour faire tourner exactement les tests A–F avec des **paramètres explicites**. Tu as tout en *Playground* (réglages manuels) et en **API** (cURL + JS + Python).
+*Question ciblée :* **Définitions (6 pts) — “Balise sémantique (ex. `<header>`) : …”**
+
+
+
+# 1) Prompt de base (identique pour A–F)
+
+**System**
+
+> Tu es un correcteur rigoureux et concis. Respecte strictement le format demandé.
+
+**User**
+
+> Réponds à la question d’examen suivante.
+> **Question :** « Balise sémantique (ex. `<header>`) : … »
+> **Contraintes de style/longueur :** {STYLE_LONGUEUR}
+> **Interdits :** pas de listes à puces, pas de code (sauf si demandé), pas d’exemples additionnels non requis.
+> **Objectifs pédagogiques :** exactitude, clarté, accessibilité, structure/SEO.
+
+> **Consigne A–F** : {STYLE_LONGUEUR} varie selon le test (voir tableau).
+
+
+# 2) Réglages à mettre dans le **Playground**
+
+Dans le panneau de droite (Playground) :
+
+* **Model**: `gpt-5` (ou équivalent dispo chez toi)
+* **Temperature**: selon le test
+* **Max tokens**: selon le test
+* **Top P**: selon le test
+* **Frequency penalty / Presence penalty**: selon le test
+
+**Tableau des tests (A–F)**
+
+| Test | Temperature | Max tokens | Top P | Freq penalty | Presence penalty | STYLE_LONGUEUR (à coller dans le prompt User)                                     | But attendu                            |
+| ---: | ----------: | ---------: | ----: | -----------: | ---------------: | --------------------------------------------------------------------------------- | -------------------------------------- |
+|    A |         0.1 |         80 |   1.0 |          0.0 |              0.0 | « Une **seule phrase** de **25–40 mots**, **factuelle**, **sans exemple**. »      | Très factuel, concis                   |
+|    B |         0.1 |        220 |   1.0 |          0.0 |              0.0 | « **120–160 mots**, **définition précise**, ton académique, sans liste. »         | Factuel, plus long                     |
+|    C |         0.7 |        120 |   1.0 |          0.0 |              0.0 | « **30–50 mots**, **brièvement** + **une nuance** (ex. vs `<div>`), 1 phrase. »   | Équilibré, un peu nuancé               |
+|    D |         0.9 |         80 |   1.0 |          0.0 |              0.0 | « **Une phrase** **30–40 mots**, **créatif mais concis**. »                       | Créatif mais court                     |
+|    E |         0.9 |        220 |   1.0 |          0.0 |              0.0 | « **150–200 mots**, développe, compare, **sans puces**, **mini-code interdit**. » | Créatif, développé (sans code)         |
+|    F |         0.9 |        220 |   0.8 |          0.2 |              0.2 | « **150–200 mots**, développe + **contre-exemple** ; éviter répétitions. »        | Créatif, moins répétitif, plus d’idées |
+
+> **Astuce Playground (sans changer le prompt)** : tu changes seulement les **sliders** (temp, max_tokens…) test par test.
+
+
+
+# 3) **API – cURL** (modèle réutilisable)
+
+Remplace `{STYLE_LONGUEUR}` par la ligne de la colonne “STYLE_LONGUEUR” du test visé.
+
+```bash
+curl https://api.openai.com/v1/chat/completions \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-5",
+    "temperature": 0.1,
+    "max_tokens": 80,
+    "top_p": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "messages": [
+      {"role":"system","content":"Tu es un correcteur rigoureux et concis. Respecte strictement le format demandé."},
+      {"role":"user","content":"Réponds à la question d’examen suivante.\nQuestion : « Balise sémantique (ex. <header>) : … »\nContraintes de style/longueur : Une seule phrase de 25–40 mots, factuelle, sans exemple.\nInterdits : pas de listes à puces, pas de code (sauf si demandé), pas d’exemples additionnels non requis.\nObjectifs pédagogiques : exactitude, clarté, accessibilité, structure/SEO."}
+    ]
+  }'
+```
+
+* Pour chaque **test B–F**, ne change que : `"temperature"`, `"max_tokens"`, `"top_p"`, `"frequency_penalty"`, `"presence_penalty"` **et** la ligne **{STYLE_LONGUEUR}** dans `messages[1].content`.
+
+
+
+# 4) **API – JavaScript** (Node)
+
+```js
+import OpenAI from "openai";
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+async function runTest({temperature, max_tokens, top_p, frequency_penalty, presence_penalty, style}) {
+  const messages = [
+    { role: "system", content: "Tu es un correcteur rigoureux et concis. Respecte strictement le format demandé." },
+    { role: "user", content:
+`Réponds à la question d’examen suivante.
+Question : « Balise sémantique (ex. <header>) : … »
+Contraintes de style/longueur : ${style}
+Interdits : pas de listes à puces, pas de code (sauf si demandé), pas d’exemples additionnels non requis.
+Objectifs pédagogiques : exactitude, clarté, accessibilité, structure/SEO.`}
+  ];
+
+  const res = await client.chat.completions.create({
+    model: "gpt-5",
+    temperature,
+    max_tokens,
+    top_p,
+    frequency_penalty,
+    presence_penalty,
+    messages
+  });
+
+  console.log(res.choices[0].message.content);
+}
+
+runTest({
+  temperature: 0.1,
+  max_tokens: 80,
+  top_p: 1.0,
+  frequency_penalty: 0.0,
+  presence_penalty: 0.0,
+  style: "Une seule phrase de 25–40 mots, factuelle, sans exemple."
+});
+```
+
+
+
+# 5) **API – Python**
+
+```python
+from openai import OpenAI
+client = OpenAI()
+
+def run_test(temperature, max_tokens, top_p, frequency_penalty, presence_penalty, style):
+    messages = [
+        {"role": "system", "content": "Tu es un correcteur rigoureux et concis. Respecte strictement le format demandé."},
+        {"role": "user", "content": f"""Réponds à la question d’examen suivante.
+Question : « Balise sémantique (ex. <header>) : … »
+Contraintes de style/longueur : {style}
+Interdits : pas de listes à puces, pas de code (sauf si demandé), pas d’exemples additionnels non requis.
+Objectifs pédagogiques : exactitude, clarté, accessibilité, structure/SEO."""}
+    ]
+
+    resp = client.chat.completions.create(
+        model="gpt-5",
+        temperature=temperature,
+        max_tokens=max_tokens,
+        top_p=top_p,
+        frequency_penalty=frequency_penalty,
+        presence_penalty=presence_penalty,
+        messages=messages,
+    )
+    print(resp.choices[0].message.content)
+
+run_test(
+    temperature=0.1,
+    max_tokens=80,
+    top_p=1.0,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    style="Une seule phrase de 25–40 mots, factuelle, sans exemple."
+)
+```
+
+
+
+# 6) Exemples de **sorties attendues** (pour valider)
+
+* **Test A (0.1 / 80 / 1.0 / 0 / 0)**
+
+  > Une balise sémantique HTML, comme `<header>`, indique la **fonction** d’une section (en-tête) afin d’améliorer la **structure**, l’**accessibilité** et la **compréhension** du document par les navigateurs et moteurs, sans effet visuel intrinsèque.
+
+* **Test E (0.9 / 220 / 1.0 / 0 / 0)**
+
+  > Une balise sémantique décrit la **nature** d’un contenu plutôt que son apparence. Avec `<header>`, on déclare l’**en-tête** d’une page ou d’une section, fréquemment réservé au titre, au logo ou à une navigation d’introduction. Contrairement à une `<div>` neutre, ce marquage explicite **oriente** les lecteurs d’écran et **guide** les moteurs, ce qui renforce l’**accessibilité** et la **cohérence** structurelle du document. Mal l’utiliser — par exemple pour maquiller un simple bloc décoratif — brouille le sens et **dilue** les bénéfices sémantiques. Bien l’employer consiste à réserver `<header>` aux zones d’**introduction** et à déléguer toute mise en forme au **CSS**, afin d’obtenir des pages **compréhensibles**, maintenables et mieux interprétées.
+
+
+
+# 7) Check-list “correction rapide”
+
+1. **A–F** tournent avec **le même prompt**, seuls **paramètres** (temp/max_tokens/…) et **STYLE_LONGUEUR** changent.
+2. **Sortie A** : 1 phrase, 25–40 mots, ultra factuelle.
+3. **Sortie E/F** : ~180 mots, développés, (F = moins répétitif grâce aux pénalités).
+4. **Pas de code** quand interdit ; pas de listes si proscrites.
+5. **Mots-clés présents** : sens/structure, accessibilité, SEO, différence `<div>` au besoin.
+
+Fournir un **fichier .http** (VS Code REST) ou un **notebook** prêt à exécuter avec les 6 variantes.
