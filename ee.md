@@ -445,3 +445,71 @@ Donne 3 rôles pour la **même question** :
 > D) 150–200 mots, avec comparaison, mini-code, et 1 mauvaise pratique.
 > **Après** : comparez les sorties A/B/C/D et surlignez ce qui change (longueur, densité, exemples, ton, structure).
 
+
+<br/>
+
+# Annexe 4 - Variantes avec des paramètres explicites
+
+
+
+1. **Prompt “chat”** où tu écris explicitement les paramètres,
+2. **Prompt API** avec `temperature` et `max_tokens` réellement fixés.
+
+
+
+# Variante A — “Directe & courte” avec paramètres explicites
+
+## 1) Version **CHAT** (sans API)
+
+> **Consigne à coller :**
+> **Température = 0.1. Max tokens ≈ 70.**
+> Réponds **en une seule phrase de 25–40 mots**, **factuelle**, **sans liste ni code**, **sans exemple supplémentaire**.
+> **Question :** Donne une définition d’une **balise sémantique** en HTML en citant **`<header>`**.
+
+*(Exemple de sortie attendue — 1 phrase)*
+
+> Une balise sémantique, comme `<header>`, indique la fonction d’une section de page, améliorant la structure, l’accessibilité et l’interprétation par les moteurs de recherche, sans imposer de style visuel, lequel reste géré via CSS.
+
+> 💡 Astuce : en “chat”, écrire « Température = 0.1 / Max tokens ≈ 70 » sert de **style guide** ; ajoute aussi **“25–40 mots”** pour contrôler la longueur.
+
+
+
+## 2) Version **API** (réglage réel)
+
+```bash
+curl https://api.openai.com/v1/chat/completions \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-5",
+    "temperature": 0.1,
+    "max_tokens": 70,
+    "messages": [
+      {"role":"system","content":"Tu es factuel, concis et respectes strictement la longueur demandée."},
+      {"role":"user","content":"Réponds en une seule phrase de 25–40 mots, factuelle, sans liste ni code, sans exemple supplémentaire. Donne une définition d’une balise sémantique en HTML en citant <header>."}
+    ]
+  }'
+```
+
+### Variante API avec garde-fous supplémentaires (optionnel)
+
+* Ajoute un **stop** pour empêcher d’ajouter autre chose :
+
+```json
+"stop": ["\n\n","•","- "]
+```
+
+* Ou force la **langue** / **ton** :
+
+```json
+{"role":"system","content":"Réponds en français, ton académique simple."}
+```
+
+
+
+### Rappels rapides
+
+* **Température 0.1** → style très **précis et stable** (peu de variation).
+* **max_tokens ~70** → suffit pour **25–40 mots** (≈ 50–65 tokens).
+* En **chat**, répète toujours la contrainte **“25–40 mots, une seule phrase”** pour simuler `max_tokens`.
+
