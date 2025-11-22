@@ -202,6 +202,9 @@ Exemples d'éléments inline :
 </details>
 
 
+<details> 
+
+<summary>  PARTIE 2 – Analyse de code HTML / CSS (30 points) </summary>
 
 ## PARTIE 2 – Analyse de code HTML / CSS (30 points)
 
@@ -368,7 +371,11 @@ Expliquez l’effet sur l’élément concerné.
 ................................................................................
 ```
 
----
+</details> 
+
+
+<details> 
+<summary> PARTIE 3 – Développement pratique (40 points) </summary>
 
 ## PARTIE 3 – Développement pratique (40 points)
 
@@ -493,7 +500,12 @@ Technique 2 :
 ................................................................................
 ```
 
----
+</details>
+
+<details> 
+<summary> PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse) </summary>
+
+
 
 ## PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse)
 
@@ -557,7 +569,7 @@ Vérification de la mise à jour sur Vercel :
 ................................................................................
 ```
 
----
+</details>
 
 **Fin de l’examen**
 Relisez vos réponses, vérifiez l’indentation, la qualité du code et les informations fournies (URLs, descriptions).
