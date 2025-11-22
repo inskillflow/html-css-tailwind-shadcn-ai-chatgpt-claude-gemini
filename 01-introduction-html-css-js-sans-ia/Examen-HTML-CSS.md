@@ -1,4 +1,3 @@
-````markdown
 # EXAMEN HTML / CSS  
 
 **Durée totale : 2h00**  
