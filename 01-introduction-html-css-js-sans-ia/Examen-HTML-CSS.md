@@ -375,9 +375,9 @@ Expliquez l’effet sur l’élément concerné.
 
 
 <details> 
-<summary> PARTIE 3 – Développement pratique (40 points) </summary>
+<summary> PARTIE 3 – Développement pratique (35 points) </summary>
 
-## PARTIE 3 – Développement pratique (40 points)
+## PARTIE 3 – Développement pratique (35 points)
 
 ### 8. Mini page “Portfolio simple” (25 pts)
 
@@ -449,7 +449,7 @@ Contraintes :
 
 ---
 
-### 9. Question responsive (15 pts)
+### 9. Question responsive (10 pts)
 
 Vous souhaitez que votre page soit plus agréable sur mobile.
 
@@ -507,7 +507,7 @@ Technique 2 :
 
 
 
-## PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse)
+## PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse) (5 points)
 
 > Cette partie peut servir de **question pratique finale** ou de **bonus**, selon les consignes de l’enseignant.
 > L’objectif est de vérifier que vous savez aller jusqu’au **déploiement en ligne** d’une page HTML/CSS.
