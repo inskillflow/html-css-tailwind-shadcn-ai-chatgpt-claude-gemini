@@ -3,9 +3,11 @@
 **Durée totale : 2h00**  
 **Total : 100 points**  
 
----
+<details> 
 
-## PARTIE 1 – Questions théoriques (30 points)
+<summary> PARTIE 1 – Questions théoriques (30 points) </summary>
+
+# PARTIE 1 – Questions théoriques (30 points)
 
 ### 1. Structure d’une page HTML (6 pts)
 
@@ -197,7 +199,9 @@ Exemples d'éléments inline :
 2) .............................................................................
 ```
 
----
+</details>
+
+
 
 ## PARTIE 2 – Analyse de code HTML / CSS (30 points)
 
@@ -491,7 +495,71 @@ Technique 2 :
 
 ---
 
+## PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse)
+
+> Cette partie peut servir de **question pratique finale** ou de **bonus**, selon les consignes de l’enseignant.
+> L’objectif est de vérifier que vous savez aller jusqu’au **déploiement en ligne** d’une page HTML/CSS.
+
+### 10. Publication de la page sur GitHub et Vercel
+
+À partir de votre page “Portfolio simple” (question 8) ou d’une version minimale fonctionnelle :
+
+1. Créez un dépôt **GitHub** pour ce projet (par exemple : `exam-html-css-[votre-nom]`).
+2. Ajoutez vos fichiers `index.html` (et `style.css` si vous l’utilisez), faites un **commit** puis un **push** vers GitHub.
+3. Connectez ce dépôt à **Vercel** et déployez la page.
+4. Modifiez ensuite votre page (par exemple : changer le titre dans `<h1>`, ajouter un projet, modifier une couleur CSS), faites un **nouveau commit** et un **nouveau push**, puis vérifiez que la modification est visible sur Vercel.
+
+#### 10.1. URL du dépôt GitHub
+
+**Zone de réponse 10.1 :**
+
+```text
+URL du dépôt GitHub :
+................................................................................
+```
+
+#### 10.2. URL du site déployé sur Vercel
+
+**Zone de réponse 10.2 :**
+
+```text
+URL du site sur Vercel :
+................................................................................
+```
+
+#### 10.3. Résumé des commandes et des étapes Git/GitHub/Vercel
+
+Décrivez brièvement :
+
+* les principales commandes Git utilisées (init, add, commit, push, etc.),
+* les grandes étapes suivies pour connecter le dépôt à Vercel et lancer le déploiement,
+* ce que vous avez modifié dans la page avant le **second push**, et comment vous avez vérifié que le site était bien mis à jour.
+
+**Zone de réponse 10.3 :**
+
+```text
+Commandes Git principales :
+................................................................................
+................................................................................
+................................................................................
+
+Étapes de connexion GitHub → Vercel :
+................................................................................
+................................................................................
+................................................................................
+
+Modification effectuée avant le 2e push :
+................................................................................
+................................................................................
+
+Vérification de la mise à jour sur Vercel :
+................................................................................
+................................................................................
+```
+
+---
+
 **Fin de l’examen**
-Relisez vos réponses, vérifiez l’indentation et la lisibilité de votre code.
+Relisez vos réponses, vérifiez l’indentation, la qualité du code et les informations fournies (URLs, descriptions).
 
 
