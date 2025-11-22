@@ -494,5 +494,4 @@ Technique 2 :
 **Fin de l’examen**
 Relisez vos réponses, vérifiez l’indentation et la lisibilité de votre code.
 
-```
-```
+
