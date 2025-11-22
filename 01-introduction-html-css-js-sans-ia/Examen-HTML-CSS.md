@@ -642,7 +642,7 @@ git push
 
 ### 3. Variante si vous commencez par cloner GitHub
 
-> (Moins probable dans ton énoncé, mais “officiel” pour un corrigé complet)
+> (Moins probable dans notre énoncé, mais je vous la partage pour un corrigé complet)
 
 ```bash
 # 0) Cloner un dépôt vide ou existant depuis GitHub
