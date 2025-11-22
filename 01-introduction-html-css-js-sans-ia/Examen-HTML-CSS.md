@@ -571,6 +571,120 @@ Vérification de la mise à jour sur Vercel :
 
 </details>
 
+
+
+
+
+
+
+
+
+
+
+
+
+<details> 
+
+<summary> Annexe 1 - commandes Git et GitHub </summary>
+
+
+
+# Annexe 1 - commandes Git et GitHub
+
+### 1. Première mise en ligne du projet
+
+> Cas le plus classique : le projet existe déjà en local, on crée le dépôt sur GitHub, puis on le pousse.
+
+```bash
+# 1) Initialiser le dépôt local
+git init
+
+# 2) Vérifier l'état des fichiers
+git status
+
+# 3) Ajouter tous les fichiers suivis (index.html, style.css, etc.)
+git add .
+
+# 4) Créer le premier commit
+git commit -m "Initial commit – Portfolio simple"
+
+# 5) Renommer la branche principale en main (bonnes pratiques GitHub)
+git branch -M main
+
+# 6) Lier le dépôt local au dépôt GitHub
+git remote add origin https://github.com/TON-USER/exam-html-css-portfolio.git
+
+# 7) Envoyer le code vers GitHub
+git push -u origin main
+```
+
+
+
+### 2. Deuxième version (modification + nouveau push)
+
+> Après avoir modifié la page (titre, projet, couleur, etc.) :
+
+```bash
+# 1) Vérifier les fichiers modifiés
+git status
+
+# 2) Ajouter les fichiers modifiés
+git add .
+
+# 3) Créer un nouveau commit avec un message clair
+git commit -m "Mise à jour du portfolio (titre + nouveau projet)"
+
+# 4) Envoyer la nouvelle version sur GitHub
+git push
+```
+
+
+
+### 3. Variante si vous commencez par cloner GitHub
+
+> (Moins probable dans ton énoncé, mais “officiel” pour un corrigé complet)
+
+```bash
+# 0) Cloner un dépôt vide ou existant depuis GitHub
+git clone https://github.com/TON-USER/exam-html-css-portfolio.git
+
+cd exam-html-css-portfolio
+
+# 1) Créer/ajouter les fichiers (index.html, style.css, etc.)
+# 2) Puis cycle classique :
+git status
+git add .
+git commit -m "Initial commit – Portfolio simple"
+git push
+```
+
+
+
+### 4. Résumé 
+
+
+```text
+Commandes attendues (ordre logique) :
+
+git init
+git status
+git add .
+git commit -m "Message clair"
+git branch -M main
+git remote add origin URL_DU_DEPOT_GITHUB
+git push -u origin main
+
+# Pour les modifications suivantes :
+git status
+git add .
+git commit -m "Description de la modification"
+git push
+```
+
+
+</details>
+
+
 **Fin de l’examen**
 Relisez vos réponses, vérifiez l’indentation, la qualité du code et les informations fournies (URLs, descriptions).
 
