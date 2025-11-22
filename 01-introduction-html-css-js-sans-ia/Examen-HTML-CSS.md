@@ -503,7 +503,7 @@ Technique 2 :
 </details>
 
 <details> 
-<summary> PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse) </summary>
+<summary> PARTIE 4 – Déploiement GitHub / Vercel (travail pratique de synthèse) (5 points) </summary>
 
 
 
